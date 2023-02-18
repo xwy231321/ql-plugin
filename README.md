@@ -1,4 +1,4 @@
-# ql-plugin<a href='https://gitee.com/xwy231321/ql-plugin/stargazers'><img src='https://gitee.com/xwy231321/ql-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
+# 清凉插件(ql-plugin)<a href='https://gitee.com/xwy231321/ql-plugin/stargazers'><img src='https://gitee.com/xwy231321/ql-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
 
 #### 访问量:2023.1.8 16：30开始
 
@@ -49,54 +49,6 @@ Q群：[597427372](https://jq.qq.com/?_wv=1027&k=rPN5Kmfx)（交流.外群）
 
 如果可以的话，给本项目个star，来支持本项目，您的支持就是给我的最大的鼓励，谢谢。
 
-<details><summary>重构计划</summary>
-
-6月10开启插件重构工作
-
-重构后，配置文件将按一个功能所有的配置整合至一个yaml文件内，方便管理
-
-将对apps、config、锅巴适配文件进行重构，部分指令正则可能做细微调整
-
-届时会出现冲突情况，删除config文件夹再更新即可
-
-以下为部分计划信息
-
-清凉图插件更名为清凉插件
-
-清凉图设置更改为清凉设置+功能名称+配置名称+其他，例如#清凉设置原神cos图开启
-
-菜单将会重写，重新布局，按年龄区分，管理员一栏做简化，管理菜单分离
-
-计划增加清凉版本，以快速查看更新内容
-
-计划增加清凉设置，将文字更改为图片，一个功能做一个单独的图片，合并的将只显示开启状态
-
-对config文件夹重新编排，按一个功能一个yaml文件
-
-计划修复聊天记录必报错的问题
-
-计划增加自动撤回配置项
-
-18以上一致更改为全聊天记录发送，取消群私聊分离，18以下单张出图，多少整合聊天记录
-
-计划增加白名单配置，当白名单有群聊号时，黑名单配置将失效
-
-大图将做部分挑整
-
-锅巴配置将修改布局，按一个功能分一个区块
-
-计划url分离到config配置项，便于更改url源
-
-计划更改小冰图为p18图
-
-计划更改三铯图为三18图（可能会有所变动）
-
-计划添加部分说明
-
-计划与其他图源服务器管理员取得联系
-
-</details>
-
 <details><summary>赞助与支持</summary>
 
 由于插件性质特殊，内群**分享交流**只提供给开发者/赞助商等有贡献人士，在此也感谢大家一路的支持
@@ -144,8 +96,6 @@ gitee仓库：[☞Windows](https://gitee.com/xwy231321/cv-plugins-in-resources/b
 注：软件源于网络
 
 附赠近万张二次元图片下载地址[点击此处跳转仓库界面](https://gitee.com/xwy231321/cv-plugins-in-resources/tree/master/%E5%9B%BE%E5%BA%93%E9%93%BE%E6%8E%A5) ，注意，txt文件里仅为图片的下载链接，在线查看会报403，请使用批量下载的软件下载
-
-[已知问题](https://gitee.com/xwy231321/cv-plugins-in-resources/blob/master/1.md)
 
 </details>
 
