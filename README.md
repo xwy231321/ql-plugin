@@ -2,7 +2,7 @@
 
 # 重构未完成，切勿下载，V1版：https://gitee.com/xwy231321/yunzai-c-v-plugin
 
-#### 访问量:2023.1.8 16：30开始
+#### 访问量
 
 [![访问量](https://profile-counter.glitch.me/ql-plugin/count.svg)](https://gitee.com/xwy231321/ql-plugin)
 
