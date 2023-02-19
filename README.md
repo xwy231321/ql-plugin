@@ -41,6 +41,11 @@ git clone https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
 |  |  |  |
 |  |  |  |
 
+| 其他功能 | | |
+|--|--|--|
+| 功能名称 | 默认状态 | 备注 |
+|  |  |  |
+|  |  |  |
 
 
 #### 反馈
