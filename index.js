@@ -5,7 +5,8 @@ const files = fs.readdirSync('./plugins/ql-plugin/apps').filter(file => file.end
 let ret = []
 
 logger.info('------（-＾〇＾-）-----')
-logger.info('清凉插件V2极速加载中～')
+logger.info('清凉插件极速加载中～')
+logger.info('V2当前重构进度：0.01%')
 logger.info('-----(/^▽^)/------')
 
 
