@@ -52,7 +52,7 @@ export class qltao extends plugin {
                       if (!openGroup.includes(e.group_id)) return e.reply("当前群未开启哦~", true);
                  }
             }
-            await e.reply('我这去翻翻去',true,{recallMsg:set.chcd})
+            await e.reply('我这去翻翻去',true,{recallMsg:7})
             let numa 
             if(e.msg.match(/\d+/) === null){
                 numa = 1
