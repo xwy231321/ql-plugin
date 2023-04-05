@@ -5,7 +5,8 @@ import co from "../../../lib/common/common.js";
 import fs from 'fs'
 import YAML from 'yaml'
 
-let firstset = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/qltao.yaml','utf8'));let secondreg = "^#?(\\d+张)?"+firstset.reg+"$"
+let firstset = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/qltao.yaml','utf8'));
+let secondreg = "^#?(\\d+张)?"+firstset.reg+"$"
 
 export class qltao extends plugin { 
     constructor() { 
@@ -24,7 +25,7 @@ export class qltao extends plugin {
         });
         }
         async qltao(e) {
-            console.log('\x1B[31m%s\x1B[0m', '清凉插件(ql-plugin)触发了 清凉淘宝秀')
+            console.log('\x1B[31m%s\x1B[0m', '清凉插件(ql-plugin)触发了 清凉-淘宝秀')
             let set = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/qltao.yaml','utf8'));
             let isopen = set.isopen
             let cdtime = firstset.getcd
