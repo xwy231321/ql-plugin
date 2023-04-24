@@ -1,0 +1,13 @@
+url: https://api.lolicon.app/setu/v2?r18=
+lx: 0
+isopen: true
+isMaster: false
+getcd: 0
+chcd: 60
+maxnum: 10
+reg: 清凉图
+blackgroup:
+  - 123456
+  - 456789
+  - 123456789
+whitegroup:

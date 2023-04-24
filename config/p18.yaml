@@ -1,0 +1,12 @@
+url: https://xiaobapi.top/api/xb/api/pixiv_r18.php
+isopen: true
+isMaster: false
+getcd: 0
+chcd: 60
+maxnum: 10
+reg: p18图
+blackgroup:
+  - 123456
+  - 456789
+  - 123456789
+whitegroup:

@@ -1,0 +1,28 @@
+url:
+  - https://image.anosu.top/pixiv/direct?r18=1
+  - https://image.anosu.top/pixiv/direct?r18=1&keyword=genshinimpact
+  - http://www.ashking.ltd/18.php
+  - https://www.acy.moe/api/r18
+  - https://moe.jitsu.top/api/?sort=r18&size=small&type=302
+  - https://image.anosu.top/pixiv/direct?r18=1&keyword=touhou
+  - https://image.anosu.top/pixiv/direct?r18=1&keyword=hololive
+  - https://image.anosu.top/pixiv/direct?r18=1&keyword=idolmaster
+  - https://image.anosu.top/pixiv/direct?r18=1&keyword=princess
+  - https://image.anosu.top/pixiv/direct?r18=1&keyword=fate
+  - https://image.anosu.top/pixiv/direct?r18=1&keyword=arknights
+  - https://image.anosu.top/pixiv/direct?r18=1&keyword=frontline
+  - https://image.anosu.top/pixiv/direct?r18=1&keyword=honkai
+  - https://image.anosu.top/pixiv/direct?r18=1&keyword=azurlane
+  - https://image.anosu.top/pixiv/direct?r18=1&keyword=bluearchive
+  - https://image.anosu.top/pixiv/direct?r18=1&keyword=genshinimpact
+isopen: true
+isMaster: false
+getcd: 0
+chcd: 60
+maxnum: 10
+reg: 铯图
+blackgroup:
+  - 123456
+  - 456789
+  - 123456789
+whitegroup:

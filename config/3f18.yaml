@@ -1,0 +1,18 @@
+url: 
+  - https://tuapi.eees.cc/api.php?category=meinv&type=302
+  - https://cdn.seovx.com/?mom=302
+  - http://ovooa.com/API/meinv/api.php?type=image
+  - http://api.btstu.cn/sjbz/
+  - http://tfapi.top/API/nypic.php
+  - https://cdn.seovx.com/ha?mom=302
+isopen: true
+isMaster: false
+getcd: 0
+chcd: 60
+maxnum: 10
+reg: 三元图
+blackgroup:
+  - 123456
+  - 456789
+  - 123456789
+whitegroup:
