@@ -1,6 +1,9 @@
 import {
   createRequire
 } from 'module'
+import fs from 'fs'
+import YAML from 'yaml'
+import fetch from "node-fetch";
 
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
