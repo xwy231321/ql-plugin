@@ -10,7 +10,7 @@ let secondreg = "^#?(\\d+张)?"+firstset.reg+"$"
 export class qlp18 extends plugin {
   constructor() {
     super({
-      name: '清凉二元图',
+      name: '清凉p18图',
       dsc: 'qlp18',
       event: 'message',
       priority: 1,
