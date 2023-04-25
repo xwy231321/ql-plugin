@@ -83,10 +83,9 @@ export async function geturljson(url, urlcd, set, e) {
 
   let msg = []
   for (let i = 0; i < [num]; i++) {
-    let res = await fetch(url).catch(err => {})
-    
-     let obj = await res.json()
-     let urls = obj.data[0].urls.original
+    let res = await fetch(url);
+    let obj = await res.json()
+    let urls = obj.data[0].urls.original
     let image = [segment.image(urls)]
     msg.push(image)
     await sleep(urlcd);
