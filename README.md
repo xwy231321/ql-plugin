@@ -1,6 +1,6 @@
 # 清凉插件(ql-plugin)<a href='https://gitee.com/xwy231321/ql-plugin/stargazers'><img src='https://gitee.com/xwy231321/ql-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
 
-# 重构尚未完成
+# 重构ing 欢迎尝试
 
 ### V1版：https://gitee.com/xwy231321/yunzai-c-v-plugin
 
