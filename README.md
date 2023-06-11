@@ -13,6 +13,7 @@ Yunzai-Bot目录下执行
 
 ```
 git clone https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
+pnpm i
 
 ```
 
