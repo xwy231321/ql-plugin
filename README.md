@@ -16,7 +16,7 @@ git clone https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
 
 ```
 
-请手动安装axios和cheerio，下面是从别的作者那看到的安装依赖的方法，一共3种，本人并不知道依赖应该如何安装，请自行辨别
+### 请手动安装axios和cheerio，下面是从别的作者那看到的安装依赖的方法，一共3种，本人并不知道依赖应该如何安装，请自行辨别
 
 pnpm install -P
 
