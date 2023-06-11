@@ -39,7 +39,7 @@ export class btsearch extends plugin {
      * @param e oicq传递的事件参数e
      */
     async btSearch(e) {
-        let set = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/2frql.yaml', 'utf8'));
+        let set = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/bt search.yaml', 'utf8'));
         let IS_GROUPS = set.IS_GROUPS
         if (e.isGroup) {
             if (!IS_GROUPS) {
@@ -103,7 +103,7 @@ let url = obj.url
         if (text.includes('大约0条结果')) {
             return [];
         }
-        let set = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/2frql.yaml', 'utf8'));
+        let set = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/bt search.yaml', 'utf8'));
         let BT_MAX_NUM = set.BT_MAX_NUM    // 返回的搜索数量 数字越小，响应速度越快
 
         const $ = cheerio.load(text);
