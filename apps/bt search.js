@@ -137,7 +137,7 @@ let url = obj.url
 
         return msgs;
     } catch (err) {
-        logger.error('请先安装cheerio：pnpm add cheerio -w')
+        logger.error('请先在本插件内安装cheerio：pnpm add cheerio -w')
         console.log(err);
         return [];
     }
