@@ -13,11 +13,11 @@ Yunzai-Bot目录下执行
 
 ```
 git clone https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
-pnpm i
+pnpm install -P
 
 ```
 
-注意：依赖安装时需要cd仅本插件目录，可通过ls查看当前文件夹列表，然后cd进去
+（ps:依赖安装应该是这个吧，还有的作者是pnpm i，还有pnpm install --filter=ql-plugin这个，搞不懂）
 
 | 食用方法 | 更新方法 | 查看设置(敬请期待) | 查看版本 |
 |------|------|----|---|
