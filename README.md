@@ -86,8 +86,6 @@ gitee仓库：[☞Windows](https://gitee.com/xwy231321/cv-plugins-in-resources/b
 
 注：软件源于网络
 
-附赠近万张二次元图片下载地址[点击此处跳转仓库界面](https://gitee.com/xwy231321/cv-plugins-in-resources/tree/master/%E5%9B%BE%E5%BA%93%E9%93%BE%E6%8E%A5) ，注意，txt文件里仅为图片的下载链接，在线查看会报403，请使用批量下载的软件下载
-
 </details>
 
 # 免责声明
