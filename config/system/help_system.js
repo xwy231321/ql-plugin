@@ -57,6 +57,10 @@ export const helpList = [
       icon: 65,
       title: "#三元图 #3张三元图",
       desc: "随机三次元图片"
+    },{
+      icon: 83,
+      title: "#bt",
+      desc: "bt搜索,后加关键词,需要手动安装axios和cheerio依赖"
     },
     {
       icon: 62,

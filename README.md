@@ -1,8 +1,7 @@
 # 清凉插件(ql-plugin)<a href='https://gitee.com/xwy231321/ql-plugin/stargazers'><img src='https://gitee.com/xwy231321/ql-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
 
-# 重构ing 欢迎尝试
+# 重构中 欢迎尝试
 
-### V1版：https://gitee.com/xwy231321/yunzai-c-v-plugin
 
 #### 访问量
 
@@ -17,7 +16,7 @@ git clone https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
 
 ```
 
-| 食用方法 | 更新方法 | 查看设置(暂无) | 查看版本 |
+| 食用方法 | 更新方法 | 查看设置(敬请期待) | 查看版本 |
 |------|------|----|---|
 | #清凉帮助 | #清凉更新 | #清凉设置 | #清凉版本 |
 
@@ -34,7 +33,8 @@ git clone https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
 | 二元图 | 10 | 开启 | 90% |
 | 三元图 | 10 | 开启 | 90% |
 | 404 | 10 | 开启 | 0% |
-| 清秀图 | 10 | 开启 | 75% |
+| 清秀图 | 10 | 开启 | new |
+| bt搜索(须手动安装axios和cheerio依赖) |  | 开启(群聊可关) | new |
 
 | 年.龄.限制 | 18及以上 | | |
 |---|---|---|---|
@@ -53,7 +53,7 @@ git clone https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
 
 #### 反馈
 
-QQ：2060403379（高三小白）
+QQ：2060403379（准大一小白）
 
 Q群：[597427372](https://jq.qq.com/?_wv=1027&k=rPN5Kmfx)（交流.外群）
 
