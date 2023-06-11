@@ -50,6 +50,14 @@ git clone https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
 | 消息风控处理 | 开启 | 自动处理发送失败的消息 | × |
 | 仓库动态检测 | 关闭 | gitee/github仓库日志检测发送，需手动添加地址 | × |
 
+| 饼 | 介绍 |
+|----|-----|
+| 定时缓存 | 定时从api里拉去部分图片缓存到本地，等触发指令时优先使用已缓存图片 |
+| 自动保存 | 获取过的图片自动保存至本地 |
+| 自动统计 | 所有指令的触发统计 |
+| api检测 | 定时自动检测api是否可用 |
+| token验证 | 三铯图 原神cos图token本地、云端验证 |
+
 
 #### 反馈
 
@@ -85,8 +93,6 @@ Q群：[597427372](https://jq.qq.com/?_wv=1027&k=rPN5Kmfx)（交流.外群）
 gitee仓库：[☞Windows](https://gitee.com/xwy231321/cv-plugins-in-resources/blob/master/PC%E7%AB%AF%E4%BA%91%E5%B4%BDjs%E6%8F%92%E4%BB%B6%E7%BC%96%E8%BE%91%E5%99%A8.rar)/[☞Android](https://gitee.com/xwy231321/cv-plugins-in-resources/blob/master/NMM_1.12.6.apk)
 
 注：软件源于网络
-
-附赠近万张二次元图片下载地址[点击此处跳转仓库界面](https://gitee.com/xwy231321/cv-plugins-in-resources/tree/master/%E5%9B%BE%E5%BA%93%E9%93%BE%E6%8E%A5) ，注意，txt文件里仅为图片的下载链接，在线查看会报403，请使用批量下载的软件下载
 
 </details>
 
