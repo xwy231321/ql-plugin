@@ -4,7 +4,7 @@ isMaster: false
 getcd: 0
 chcd: 60
 maxnum: 10
-reg: p18图
+reg: 铯p图
 blackgroup:
   - 123456
   - 456789

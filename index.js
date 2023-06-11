@@ -1,5 +1,18 @@
 import fs from 'node:fs'
 
+let is_icqq = false;
+let is_oicq = false;
+
+try {
+  let icqq = await import("icqq");
+  if (icqq) is_icqq = true;
+} catch (err) {
+  try {
+    let oicq = await import("oicq");
+    if (oicq) is_oicq = true;
+  } catch (err) { }
+}
+
 if (!global.segment) {
     global.segment = (await import("oicq")).segment
 }
