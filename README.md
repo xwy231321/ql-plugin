@@ -13,11 +13,16 @@ Yunzai-Bot目录下执行
 
 ```
 git clone https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
-pnpm install -P
 
 ```
 
-（ps:依赖安装应该是这个吧，还有的作者是pnpm i，还有pnpm install --filter=ql-plugin这个，搞不懂）
+请手动安装axios和cheerio，下面是从别的作者那看到的安装依赖的方法，一共3种，本人并不知道依赖应该如何安装，请自行辨别
+
+pnpm install -P
+
+pnpm i
+
+pnpm install --filter=ql-plugin
 
 | 食用方法 | 更新方法 | 查看设置(敬请期待) | 查看版本 |
 |------|------|----|---|
