@@ -206,7 +206,8 @@ export function supportGuoba () {
             promptProps: addGroupPromptProps,
             valueFormatter: ((value) => Number.parseInt(value)).toString(),
           },
-        },{
+        }, /*
+        {
           component: 'Divider',
           label: '图床随机图',
         },{
@@ -300,7 +301,8 @@ export function supportGuoba () {
       promptProps: addGroupPromptProps,
       valueFormatter: ((value) => Number.parseInt(value)).toString(),
     },
-  },{
+  },
+  */{
           component: 'Divider',
           label: 'bt搜索',
         },{
