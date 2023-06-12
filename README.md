@@ -15,14 +15,21 @@ Yunzai-Bot目录下执行
 git clone https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
 
 ```
+```
+git clone https://github.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
+
+```
 
 ### 请手动安装axios和cheerio，下面是从别的作者那看到的安装依赖的方法，一共3种，本人并不知道依赖应该如何安装，请自行辨别
-
+```
 pnpm install -P
-
+```
+```
 pnpm i
-
+```
+```
 pnpm install --filter=ql-plugin
+```
 
 | 食用方法 | 更新方法 | 查看设置(敬请期待) | 查看版本 |
 |------|------|----|---|
@@ -116,6 +123,6 @@ Yunzai-Bot（V3）：[☞Github](https://github.com/Le-niao/Yunzai-Bot)/[☞Gite
 
 Yunzai-Bot（V2）：[☞Github](https://github.com/yoimiya-kokomi/Yunzai-Bot)/[☞Gitee](https://gitee.com/yoimiya-kokomi/Yunzai-Bot) 
 
-ql-plugin：[☞Gitee](https://gitee.com/xwy231321/ql-plugin)
+ql-plugin：[☞Gitee](https://gitee.com/xwy231321/ql-plugin)/[☞Github](https://github.com/xwy231321/ql-plugin)
 
 
