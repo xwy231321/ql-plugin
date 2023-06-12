@@ -206,8 +206,7 @@ export function supportGuoba () {
             promptProps: addGroupPromptProps,
             valueFormatter: ((value) => Number.parseInt(value)).toString(),
           },
-        }, /*
-        {
+        }, {
           component: 'Divider',
           label: '图床随机图',
         },{
@@ -220,18 +219,6 @@ export function supportGuoba () {
           label: '主人生效',
           bottomHelpMessage: '是否开启',
           component: 'Switch'
-      },{
-          field: 'mh.maxnum',
-          label: '单次极限数量',
-          helpMessage: '修改后直接生效',
-          bottomHelpMessage: '单次获取最大数量 默认10',
-          component: 'InputNumber',
-          required: true,
-          componentProps: {
-            min: 1,
-            max: 50,
-            placeholder: '请输入数字',
-          },
       },{
           field: 'mh.getcd',
           label: '触发CD',
@@ -259,7 +246,7 @@ export function supportGuoba () {
       },{
     field: 'mh.reg',
     label: '触发指令正则',
-    bottomHelpMessage: '支持自行更换触发指令，支持不带#，支持多张如3张xx，重启生效',
+    bottomHelpMessage: '支持自行更换触发指令，支持不带#，仅支持单次一张，重启生效',
     component: 'Input',
     required: true,
     componentProps: {
@@ -301,8 +288,7 @@ export function supportGuoba () {
       promptProps: addGroupPromptProps,
       valueFormatter: ((value) => Number.parseInt(value)).toString(),
     },
-  },
-  */{
+  },{
           component: 'Divider',
           label: 'bt搜索',
         },{

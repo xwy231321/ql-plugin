@@ -3,7 +3,6 @@ isopen: true
 isMaster: false
 getcd: 0
 chcd: 60
-maxnum: 10
 reg: 图床随机图
 blackgroup:
   - 123456

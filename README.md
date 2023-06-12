@@ -50,6 +50,7 @@ pnpm install --filter=ql-plugin
 | 404 | 10 | 开启 | 0% |
 | 清秀图 | 10 | 开启 | new |
 | bt搜索(须手动安装axios和cheerio依赖) |  | 开启(群聊可关) | new |
+| 图床随机图 | 1(锁死) | 开启 | new |
 
 
 | 年.龄.限制 | 18及以上 | | |
