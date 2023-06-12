@@ -13,23 +13,7 @@ const addGroupPromptProps = {
 }
 export function supportGuoba () {
     return {
-            pluginInfo: {
-      name: '清凉插件',
-      title: 'ql-plugin',
-      author: '@xwy',
-      authorLink: 'https://gitee.com/xwy231321',
-      link: 'https://gitee.com/xwy231321/ql-plugin',
-      isV3: true,
-      isV2: false,
-      description: '清凉图重构版',
-      // 显示图标，此为个性化配置
-      // 图标可在 https://icon-sets.iconify.design 这里进行搜索
-      //icon: 'mdi:stove',
-      // 图标颜色，例：#FF0000 或 rgb(255, 0, 0)
-     // iconColor: '#d19f56',
-      // 如果想要显示成图片，也可以填写图标路径（绝对路径）
-    //  iconPath: path.join(_paths.pluginRoot, 'resources/images/icon.png'),
-    },
+            
         configInfo: {
             schemas: [
                {
@@ -126,7 +110,603 @@ export function supportGuoba () {
             promptProps: addGroupPromptProps,
             valueFormatter: ((value) => Number.parseInt(value)).toString(),
           },
+        },
+
+        {
+                component: 'Divider',
+                label: '铯p图',
+              },{
+                field: 'p18.isopen',
+                label: '功能开关',
+                bottomHelpMessage: '是否开启',
+                component: 'Switch'
+            },{
+                field: 'p18.isMaster',
+                label: '主人生效',
+                bottomHelpMessage: '是否开启',
+                component: 'Switch'
+            },{
+                field: 'p18.maxnum',
+                label: '单次极限数量',
+                helpMessage: '修改后直接生效',
+                bottomHelpMessage: '单次获取最大数量 默认10',
+                component: 'InputNumber',
+                required: true,
+                componentProps: {
+                  min: 1,
+                  max: 50,
+                  placeholder: '请输入数字',
+                },
+            },{
+                field: 'p18.getcd',
+                label: '触发CD',
+                helpMessage: '重启后生效',
+                bottomHelpMessage: '为0则无间隔，单位毫秒，连续两次触发最短间隔（非全局）',
+                component: 'InputNumber',
+                required: true,
+                componentProps: {
+                  min: 0,
+                  max: 99999999,
+                  placeholder: '请输入数字',
+                },
+            },{
+                field: 'p18.chcd',
+                label: '撤回CD',
+                helpMessage: '修改后直接生效',
+                bottomHelpMessage: '撤回CD，单位秒，为0不撤回，最大119',
+                component: 'InputNumber',
+                required: true,
+                componentProps: {
+                  min: 0,
+                  max: 119,
+                  placeholder: '请输入数字',
+                },
+            },{
+          field: 'p18.reg',
+          label: '触发指令正则',
+          bottomHelpMessage: '支持自行更换触发指令，支持不带#，支持多张如3张xx，重启生效',
+          component: 'Input',
+          required: true,
+          componentProps: {
+            placeholder: '请输入触发正则',
+          },
         },{
+          field: 'p18.url',
+          label: '请求地址',
+          bottomHelpMessage: '支持自行更换，url返回图片格式',
+          component: 'Input',
+          required: true,
+          componentProps: {
+            placeholder: '请输入接口请求地址',
+          },
+        },{
+          field: 'p18.whitegroup',
+          label: '白名单群',
+          bottomHelpMessage: '白名单群，可以设置多个，当存在白名单群时黑名单群配置将失效',
+          component: 'GTags',
+          componentProps: {
+            placeholder: '请输入白名单群',
+            allowAdd: true,
+            allowDel: true,
+            showPrompt: true,
+            promptProps: addGroupPromptProps,
+            valueFormatter: ((value) => Number.parseInt(value)).toString(),
+          },
+        },
+        {
+          field: 'p18.blackgroup',
+          label: '黑名单群',
+          bottomHelpMessage: '黑名单群，可以设置多个，当存在白名单群时，该配置失效',
+          component: 'GTags',
+          componentProps: {
+            placeholder: '请输入黑名单群',
+            allowAdd: true,
+            allowDel: true,
+            showPrompt: true,
+            promptProps: addGroupPromptProps,
+            valueFormatter: ((value) => Number.parseInt(value)).toString(),
+          },
+        },{
+          component: 'Divider',
+          label: '图床随机图',
+        },{
+          field: 'mh.isopen',
+          label: '功能开关',
+          bottomHelpMessage: '是否开启',
+          component: 'Switch'
+      },{
+          field: 'mh.isMaster',
+          label: '主人生效',
+          bottomHelpMessage: '是否开启',
+          component: 'Switch'
+      },{
+          field: 'mh.maxnum',
+          label: '单次极限数量',
+          helpMessage: '修改后直接生效',
+          bottomHelpMessage: '单次获取最大数量 默认10',
+          component: 'InputNumber',
+          required: true,
+          componentProps: {
+            min: 1,
+            max: 50,
+            placeholder: '请输入数字',
+          },
+      },{
+          field: 'mh.getcd',
+          label: '触发CD',
+          helpMessage: '重启后生效',
+          bottomHelpMessage: '为0则无间隔，单位毫秒，连续两次触发最短间隔（非全局）',
+          component: 'InputNumber',
+          required: true,
+          componentProps: {
+            min: 0,
+            max: 99999999,
+            placeholder: '请输入数字',
+          },
+      },{
+          field: 'mh.chcd',
+          label: '撤回CD',
+          helpMessage: '修改后直接生效',
+          bottomHelpMessage: '撤回CD，单位秒，为0不撤回，最大119',
+          component: 'InputNumber',
+          required: true,
+          componentProps: {
+            min: 0,
+            max: 119,
+            placeholder: '请输入数字',
+          },
+      },{
+    field: 'mh.reg',
+    label: '触发指令正则',
+    bottomHelpMessage: '支持自行更换触发指令，支持不带#，支持多张如3张xx，重启生效',
+    component: 'Input',
+    required: true,
+    componentProps: {
+      placeholder: '请输入触发正则',
+    },
+  },{
+    field: 'mh.url',
+    label: '请求地址',
+    bottomHelpMessage: '支持自行更换，url返回图片格式',
+    component: 'Input',
+    required: true,
+    componentProps: {
+      placeholder: '请输入接口请求地址',
+    },
+  },{
+    field: 'mh.whitegroup',
+    label: '白名单群',
+    bottomHelpMessage: '白名单群，可以设置多个，当存在白名单群时黑名单群配置将失效',
+    component: 'GTags',
+    componentProps: {
+      placeholder: '请输入白名单群',
+      allowAdd: true,
+      allowDel: true,
+      showPrompt: true,
+      promptProps: addGroupPromptProps,
+      valueFormatter: ((value) => Number.parseInt(value)).toString(),
+    },
+  },
+  {
+    field: 'mh.blackgroup',
+    label: '黑名单群',
+    bottomHelpMessage: '黑名单群，可以设置多个，当存在白名单群时，该配置失效',
+    component: 'GTags',
+    componentProps: {
+      placeholder: '请输入黑名单群',
+      allowAdd: true,
+      allowDel: true,
+      showPrompt: true,
+      promptProps: addGroupPromptProps,
+      valueFormatter: ((value) => Number.parseInt(value)).toString(),
+    },
+  },{
+          component: 'Divider',
+          label: 'bt搜索',
+        },{
+          field: 'btsearch.IS_GROUPS',
+          label: '群聊开关',
+          bottomHelpMessage: '是否开启',
+          component: 'Switch'
+      },{
+          field: 'btsearch.BT_MAX_NUM',
+          label: '单次获取极限数量',
+          helpMessage: '修改后直接生效',
+          bottomHelpMessage: '单次获取最大数量 默认3',
+          component: 'InputNumber',
+          required: true,
+          componentProps: {
+            min: 1,
+            max: 100,
+            placeholder: '请输入数字',
+          },
+      },{
+        component: 'Divider',
+        label: '清凉图',
+      },{
+        field: 'ql2frql.isopen',
+        label: '功能开关',
+        bottomHelpMessage: '是否开启',
+        component: 'Switch'
+      },{
+        field: 'ql2frql.isMaster',
+        label: '主人生效',
+        bottomHelpMessage: '是否开启',
+        component: 'Switch'
+       },{
+         field: 'ql2frql.lx',
+         label: '图片类型',
+         helpMessage: '修改后直接生效',
+         bottomHelpMessage: '0为非18,1为18,2为混合模式',
+         component: 'InputNumber',
+         required: true,
+         componentProps: {
+         min: 0,
+         max: 2,
+         placeholder: '请输入数字',
+         },
+       },{
+         field: 'ql2frql.maxnum',
+         label: '单次极限数量',
+         helpMessage: '修改后直接生效',
+         bottomHelpMessage: '单次获取最大数量 默认10',
+         component: 'InputNumber',
+         required: true,
+         componentProps: {
+          min: 1,
+          max: 50,
+          placeholder: '请输入数字',
+        },
+       },{
+        field: 'ql2frql.getcd',
+        label: '触发CD',
+        helpMessage: '重启后生效',
+        bottomHelpMessage: '为0则无间隔，单位毫秒，连续两次触发最短间隔（非全局）',
+        component: 'InputNumber',
+        required: true,
+        componentProps: {
+          min: 0,
+          max: 99999999,
+          placeholder: '请输入数字',
+        },
+       },{
+         field: 'ql2frql.chcd',
+         label: '撤回CD',
+         helpMessage: '修改后直接生效',
+         bottomHelpMessage: '撤回CD，单位秒，为0不撤回，最大119',
+         component: 'InputNumber',
+         required: true,
+         componentProps: {
+          min: 0,
+          max: 119,
+          placeholder: '请输入数字',
+         },
+         },{
+          field: 'ql2frql.reg',
+          label: '触发指令正则',
+          bottomHelpMessage: '支持自行更换触发指令，支持不带#，支持多张如3张xx，重启生效',
+          component: 'Input',
+         required: true,
+         componentProps: {
+          placeholder: '请输入触发正则',
+          },
+         },{
+         field: 'ql2frql.url',
+         label: '请求地址',
+         bottomHelpMessage: '支持自行更换，url返回图片格式',
+         component: 'Input',
+         required: true,
+         componentProps: {
+         placeholder: '请输入接口请求地址',
+         },
+        },{
+          field: 'ql2frql.whitegroup',
+         label: '白名单群',
+          bottomHelpMessage: '白名单群，可以设置多个，当存在白名单群时黑名单群配置将失效',
+         component: 'GTags',
+           componentProps: {
+          placeholder: '请输入白名单群',
+          allowAdd: true,
+           allowDel: true,
+          showPrompt: true,
+          promptProps: addGroupPromptProps,
+         valueFormatter: ((value) => Number.parseInt(value)).toString(),
+         },
+         }, {
+    field: 'ql2frql.blackgroup',
+    label: '黑名单群',
+    bottomHelpMessage: '黑名单群，可以设置多个，当存在白名单群时，该配置失效',
+    component: 'GTags',
+    componentProps: {
+    placeholder: '请输入黑名单群',
+    allowAdd: true,
+    allowDel: true,
+    showPrompt: true,
+    promptProps: addGroupPromptProps,
+    valueFormatter: ((value) => Number.parseInt(value)).toString(),
+    },
+    },{
+          component: 'Divider',
+          label: '铯图',
+        },{
+          field: 'ql2r18.isopen',
+          label: '功能开关',
+          bottomHelpMessage: '是否开启',
+          component: 'Switch'
+      },{
+          field: 'ql2r18.isMaster',
+          label: '主人生效',
+          bottomHelpMessage: '是否开启',
+          component: 'Switch'
+      },{
+          field: 'ql2r18.maxnum',
+          label: '单次极限数量',
+          helpMessage: '修改后直接生效',
+          bottomHelpMessage: '单次获取最大数量 默认10',
+          component: 'InputNumber',
+          required: true,
+          componentProps: {
+            min: 1,
+            max: 50,
+            placeholder: '请输入数字',
+          },
+      },{
+          field: 'ql2r18.getcd',
+          label: '触发CD',
+          helpMessage: '重启后生效',
+          bottomHelpMessage: '为0则无间隔，单位毫秒，连续两次触发最短间隔（非全局）',
+          component: 'InputNumber',
+          required: true,
+          componentProps: {
+            min: 0,
+            max: 99999999,
+            placeholder: '请输入数字',
+          },
+      },{
+          field: 'ql2r18.chcd',
+          label: '撤回CD',
+          helpMessage: '修改后直接生效',
+          bottomHelpMessage: '撤回CD，单位秒，为0不撤回，最大119',
+          component: 'InputNumber',
+          required: true,
+          componentProps: {
+            min: 0,
+            max: 119,
+            placeholder: '请输入数字',
+          },
+      },{
+    field: 'ql2r18.reg',
+    label: '触发指令正则',
+    bottomHelpMessage: '支持自行更换触发指令，支持不带#，支持多张如3张xx，重启生效',
+    component: 'Input',
+    required: true,
+    componentProps: {
+      placeholder: '请输入触发正则',
+    },
+  },{
+    field: 'ql2r18.url',
+    label: '请求地址',
+    bottomHelpMessage: '支持自行更换，url返回图片格式',
+    component: 'Input',
+    required: true,
+    componentProps: {
+      placeholder: '请输入接口请求地址',
+    },
+  },{
+    field: 'ql2r18.whitegroup',
+    label: '白名单群',
+    bottomHelpMessage: '白名单群，可以设置多个，当存在白名单群时黑名单群配置将失效',
+    component: 'GTags',
+    componentProps: {
+      placeholder: '请输入白名单群',
+      allowAdd: true,
+      allowDel: true,
+      showPrompt: true,
+      promptProps: addGroupPromptProps,
+      valueFormatter: ((value) => Number.parseInt(value)).toString(),
+    },
+  },
+  {
+    field: 'ql2r18.blackgroup',
+    label: '黑名单群',
+    bottomHelpMessage: '黑名单群，可以设置多个，当存在白名单群时，该配置失效',
+    component: 'GTags',
+    componentProps: {
+      placeholder: '请输入黑名单群',
+      allowAdd: true,
+      allowDel: true,
+      showPrompt: true,
+      promptProps: addGroupPromptProps,
+      valueFormatter: ((value) => Number.parseInt(value)).toString(),
+    },
+  },{
+                component: 'Divider',
+                label: '二元图',
+              },{
+                field: 'ql2f18.isopen',
+                label: '功能开关',
+                bottomHelpMessage: '是否开启',
+                component: 'Switch'
+            },{
+                field: 'ql2f18.isMaster',
+                label: '主人生效',
+                bottomHelpMessage: '是否开启',
+                component: 'Switch'
+            },{
+                field: 'ql2f18.maxnum',
+                label: '单次极限数量',
+                helpMessage: '修改后直接生效',
+                bottomHelpMessage: '单次获取最大数量 默认10',
+                component: 'InputNumber',
+                required: true,
+                componentProps: {
+                  min: 1,
+                  max: 50,
+                  placeholder: '请输入数字',
+                },
+            },{
+                field: 'ql2f18.getcd',
+                label: '触发CD',
+                helpMessage: '重启后生效',
+                bottomHelpMessage: '为0则无间隔，单位毫秒，连续两次触发最短间隔（非全局）',
+                component: 'InputNumber',
+                required: true,
+                componentProps: {
+                  min: 0,
+                  max: 99999999,
+                  placeholder: '请输入数字',
+                },
+            },{
+                field: 'ql2f18.chcd',
+                label: '撤回CD',
+                helpMessage: '修改后直接生效',
+                bottomHelpMessage: '撤回CD，单位秒，为0不撤回，最大119',
+                component: 'InputNumber',
+                required: true,
+                componentProps: {
+                  min: 0,
+                  max: 119,
+                  placeholder: '请输入数字',
+                },
+            },{
+          field: 'ql2f18.reg',
+          label: '触发指令正则',
+          bottomHelpMessage: '支持自行更换触发指令，支持不带#，支持多张如3张xx，重启生效',
+          component: 'Input',
+          required: true,
+          componentProps: {
+            placeholder: '请输入触发正则',
+          },
+        },{
+          field: 'ql2f18.url',
+          label: '请求地址',
+          bottomHelpMessage: '支持自行更换，url返回图片格式',
+          component: 'Input',
+          required: true,
+          componentProps: {
+            placeholder: '请输入接口请求地址',
+          },
+        },{
+          field: 'ql2f18.whitegroup',
+          label: '白名单群',
+          bottomHelpMessage: '白名单群，可以设置多个，当存在白名单群时黑名单群配置将失效',
+          component: 'GTags',
+          componentProps: {
+            placeholder: '请输入白名单群',
+            allowAdd: true,
+            allowDel: true,
+            showPrompt: true,
+            promptProps: addGroupPromptProps,
+            valueFormatter: ((value) => Number.parseInt(value)).toString(),
+          },
+        }, {
+          field: 'ql2f18.blackgroup',
+          label: '黑名单群',
+          bottomHelpMessage: '黑名单群，可以设置多个，当存在白名单群时，该配置失效',
+          component: 'GTags',
+          componentProps: {
+            placeholder: '请输入黑名单群',
+            allowAdd: true,
+            allowDel: true,
+            showPrompt: true,
+            promptProps: addGroupPromptProps,
+            valueFormatter: ((value) => Number.parseInt(value)).toString(),
+          },
+        },{
+          component: 'Divider',
+          label: '三元图',
+        },{
+          field: 'ql3f18.isopen',
+          label: '功能开关',
+          bottomHelpMessage: '是否开启',
+          component: 'Switch'
+      },{
+          field: 'ql3f18.isMaster',
+          label: '主人生效',
+          bottomHelpMessage: '是否开启',
+          component: 'Switch'
+      },{
+          field: 'ql3f18.maxnum',
+          label: '单次极限数量',
+          helpMessage: '修改后直接生效',
+          bottomHelpMessage: '单次获取最大数量 默认10',
+          component: 'InputNumber',
+          required: true,
+          componentProps: {
+            min: 1,
+            max: 50,
+            placeholder: '请输入数字',
+          },
+      },{
+          field: 'ql3f18.getcd',
+          label: '触发CD',
+          helpMessage: '重启后生效',
+          bottomHelpMessage: '为0则无间隔，单位毫秒，连续两次触发最短间隔（非全局）',
+          component: 'InputNumber',
+          required: true,
+          componentProps: {
+            min: 0,
+            max: 99999999,
+            placeholder: '请输入数字',
+          },
+      },{
+          field: 'ql3f18.chcd',
+          label: '撤回CD',
+          helpMessage: '修改后直接生效',
+          bottomHelpMessage: '撤回CD，单位秒，为0不撤回，最大119',
+          component: 'InputNumber',
+          required: true,
+          componentProps: {
+            min: 0,
+            max: 119,
+            placeholder: '请输入数字',
+          },
+      },{
+    field: 'ql3f18.reg',
+    label: '触发指令正则',
+    bottomHelpMessage: '支持自行更换触发指令，支持不带#，支持多张如3张xx，重启生效',
+    component: 'Input',
+    required: true,
+    componentProps: {
+      placeholder: '请输入触发正则',
+    },
+  },{
+    field: 'ql3f18.url',
+    label: '请求地址',
+    bottomHelpMessage: '支持自行更换，url返回图片格式',
+    component: 'Input',
+    required: true,
+    componentProps: {
+      placeholder: '请输入接口请求地址',
+    },
+  },{
+    field: 'ql3f18.whitegroup',
+    label: '白名单群',
+    bottomHelpMessage: '白名单群，可以设置多个，当存在白名单群时黑名单群配置将失效',
+    component: 'GTags',
+    componentProps: {
+      placeholder: '请输入白名单群',
+      allowAdd: true,
+      allowDel: true,
+      showPrompt: true,
+      promptProps: addGroupPromptProps,
+      valueFormatter: ((value) => Number.parseInt(value)).toString(),
+    },
+  },
+  {
+    field: 'ql3f18.blackgroup',
+    label: '黑名单群',
+    bottomHelpMessage: '黑名单群，可以设置多个，当存在白名单群时，该配置失效',
+    component: 'GTags',
+    componentProps: {
+      placeholder: '请输入黑名单群',
+      allowAdd: true,
+      allowDel: true,
+      showPrompt: true,
+      promptProps: addGroupPromptProps,
+      valueFormatter: ((value) => Number.parseInt(value)).toString(),
+    },
+  },{
                 component: 'Divider',
                 label: '敬请期待',
               },

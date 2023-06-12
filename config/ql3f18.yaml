@@ -1,0 +1,28 @@
+url: 
+  - https://tuapi.eees.cc/api.php?category=meinv&type=302
+  - https://cdn.seovx.com/?mom=302
+  - http://ovooa.com/API/meinv/api.php?type=image
+  - http://api.btstu.cn/sjbz/
+  - http://tfapi.top/API/nypic.php
+  - https://cdn.seovx.com/ha?mom=302
+  - https://api.r10086.com/樱道随机图片api接口.php?图片系列=少女写真1
+  - https://api.r10086.com/樱道随机图片api接口.php?图片系列=少女写真2
+  - https://api.r10086.com/樱道随机图片api接口.php?图片系列=少女写真3
+  - https://api.r10086.com/樱道随机图片api接口.php?图片系列=少女写真4
+  - https://api.r10086.com/樱道随机图片api接口.php?图片系列=少女写真5
+  - https://api.r10086.com/樱道随机图片api接口.php?图片系列=少女写真6
+  - https://api.r10086.com/樱道随机图片api接口.php?图片系列=日本COS中国COS
+  - https://api.r10086.com/樱道随机图片api接口.php?图片系列=极品美女图片
+  - https://api.r10086.com/樱道随机图片api接口.php?图片系列=萝莉
+  - https://api.r10086.com/樱道随机图片api接口.php?图片系列=死库水萝莉
+isopen: true
+isMaster: false
+getcd: 0
+chcd: 60
+maxnum: 10
+reg: 三元图
+blackgroup:
+  - 123456
+  - 456789
+  - 123456789
+whitegroup:

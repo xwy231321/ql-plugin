@@ -4,26 +4,26 @@ import fs from 'fs'
 import YAML from 'yaml'
 import * as qlapi from "../../ql-plugin/model/qlapi.js";
 
-let firstset = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2frql.yaml', 'utf8'));
+let firstset = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/mh.yaml', 'utf8'));
 let secondreg = "^#?(\\d+张)?"+firstset.reg+"$"
 
-export class ql2frql extends plugin {
+export class mh extends plugin {
   constructor() {
     super({
-      name: '清凉清凉图',
-      dsc: 'ql2frql',
+      name: '图床随机图',
+      dsc: 'mh',
       event: 'message',
-      priority: 1,
+      priority: 300,
       rule: [{
         reg: secondreg,
-        fnc: 'ql2frql'
+        fnc: 'mh'
       },
       ]
     });
   }
-  async ql2frql(e) {
+  async mh(e) {
     console.log('清凉插件(ql-plugin)触发了 清凉-' + firstset.reg)
-    let set = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2frql.yaml', 'utf8'));
+    let set = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/mh.yaml', 'utf8'));
     let isopen = set.isopen
     let cdtime = firstset.getcd
     if (!isopen) {
@@ -51,9 +51,7 @@ export class ql2frql extends plugin {
     await e.reply('我这去翻翻去', true, {
       recallMsg: 7
     })
-    let url = set.url+set.lx
-    let urlcd = 200
-    let msg = await qlapi.geturljson(url, urlcd, set, e)
+    let msg = await qlapi.geturls(e, set)
     let dec = firstset.reg+'来啦'
     let Msg = await qlapi.makeForwardMsg(e, msg, dec)
     await e.reply(Msg, false, {

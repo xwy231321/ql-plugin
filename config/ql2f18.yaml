@@ -1,0 +1,17 @@
+url: 
+  - https://app.zichen.zone/api/acg.php
+  - https://api.dujin.org/pic/yuanshen
+  - https://img.xjh.me/random_img.php?return=302
+  - https://api.yimian.xyz/img?type=moe&size=1920x1080
+  - https://api.yimian.xyz/img?type=moe
+isopen: true
+isMaster: false
+getcd: 0
+chcd: 60
+maxnum: 10
+reg: 二元图
+blackgroup:
+  - 123456
+  - 456789
+  - 123456789
+whitegroup:

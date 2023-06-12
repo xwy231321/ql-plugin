@@ -61,6 +61,10 @@ export const helpList = [
       icon: 83,
       title: "#bt",
       desc: "bt搜索,后加关键词,需要手动安装axios和cheerio依赖"
+    },{
+      icon: 79,
+      title: "#图床随机图 #3张图床随机图",
+      desc: "图床的图片，你永远不知道下一张是什么"
     },
     {
       icon: 62,

@@ -4,7 +4,7 @@ import fs from 'fs'
 import YAML from 'yaml'
 import * as qlapi from "../../ql-plugin/model/qlapi.js";
 
-let firstset = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/3f18.yaml', 'utf8'));
+let firstset = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql3f18.yaml', 'utf8'));
 let secondreg = "^#?(\\d+张)?"+firstset.reg+"$"
 
 export class ql3f18 extends plugin {
@@ -23,7 +23,7 @@ export class ql3f18 extends plugin {
   }
   async ql3f18(e) {
     console.log('清凉插件(ql-plugin)触发了 清凉-' + firstset.reg)
-    let set = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/3f18.yaml', 'utf8'));
+    let set = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql3f18.yaml', 'utf8'));
     let isopen = set.isopen
     let cdtime = firstset.getcd
     if (!isopen) {
