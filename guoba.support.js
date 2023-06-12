@@ -220,6 +220,18 @@ export function supportGuoba () {
           bottomHelpMessage: '是否开启',
           component: 'Switch'
       },{
+        field: 'mh.maxnum',
+        label: '单次极限数量',
+        helpMessage: '修改后直接生效',
+        bottomHelpMessage: '单次获取最大数量 默认10',
+        component: 'InputNumber',
+        required: true,
+        componentProps: {
+          min: 1,
+          max: 50,
+          placeholder: '请输入数字',
+        },
+    },{
           field: 'mh.getcd',
           label: '触发CD',
           helpMessage: '重启后生效',

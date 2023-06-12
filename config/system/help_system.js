@@ -64,7 +64,7 @@ export const helpList = [
     },
     {
       icon: 79,
-      title: "#图床随机图",
+      title: "#图床随机图 #3张图床随机图",
       desc: "图床的图片，你永远不知道下一张是什么"
     },
     

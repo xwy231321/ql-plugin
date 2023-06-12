@@ -2,6 +2,7 @@ url: https://api.yimian.xyz/img?type=imgbed
 isopen: true
 isMaster: false
 getcd: 0
+maxnum: 10
 chcd: 60
 reg: 图床随机图
 blackgroup:

@@ -5,7 +5,7 @@ import YAML from 'yaml'
 import * as qlapi from "../../ql-plugin/model/qlapi.js";
 
 let firstset = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/mh.yaml', 'utf8'));
-let secondreg = "^#?"+firstset.reg+"$"
+let secondreg = "^#?(\\d+张)?"+firstset.reg+"$"
 
 export class mh extends plugin {
   constructor() {
@@ -51,8 +51,8 @@ export class mh extends plugin {
     await e.reply('我这去翻翻去', true, {
       recallMsg: 7
     })
-    let msg = await qlapi.puppeteer(set.url)
-    e.reply(msg,{ recallMsg: set.chcd})
+    let images = await qlapi.geturl(set.url, set.getcd, set, e)
+    e.reply(images,{recallMsg: set.chcd})
     return true
   }
 }
