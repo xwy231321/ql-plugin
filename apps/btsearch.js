@@ -16,28 +16,19 @@ import YAML from 'yaml'
 export class btsearch extends plugin {
     constructor() {
         super({
-            /** 功能名称 */
             name: 'bt搜索',
-            /** 功能描述 */
             dsc: 'bt搜索',
-            /** https://oicqjs.github.io/oicq/#events */
             event: 'message',
-            /** 优先级，数字越小等级越高 */
             priority: 5000,
             rule: [
                 {
-                    /** 命令正则匹配 */
                     reg: '^#?bt(.*)$',
-                    /** 执行方法 */
                     fnc: 'btSearch',
                 }
             ]
         })
     }
 
-    /**
-     * @param e oicq传递的事件参数e
-     */
     async btSearch(e) {
         let set = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/btsearch.yaml', 'utf8'));
         let IS_GROUPS = set.IS_GROUPS
@@ -47,7 +38,6 @@ export class btsearch extends plugin {
                 return
             }
         }
-        /** e.msg 用户的命令消息 */
         logger.info('[用户命令]', e.msg)
         let keyword = e.msg.replace(/#?bt/g, "").trim()
         let urlget = 'https://gitee.com/xwy231321/ql-plugin/raw/master/config/bt.json'
@@ -61,7 +51,6 @@ export class btsearch extends plugin {
         const regex = /_rel_(\d+)\.html/;
         const result = regex.exec(href);
         let b = Number(result[1]);
-
         let reply = "共找到" + b + "页，当前设置单次最大至" + set.page_max_num + "页,正在依次发送,若中途报：没有搜索到，则为网络问题"
         await e.reply(reply)
         let getnum
@@ -87,6 +76,7 @@ export class btsearch extends plugin {
         const res = await this.e.reply(await Bot.makeForwardMsg(msgList), false, {
             recallMsg: -1,
         });
+        /*
         if (!res) {
             if (!res) {
                 if (this.e.group && this.e.group.is_admin) {
@@ -107,6 +97,7 @@ export class btsearch extends plugin {
                 }
             }
         }
+        */
     }
     }
         
@@ -127,11 +118,10 @@ let url = obj.url
             return [];
         }
         let set = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/btsearch.yaml', 'utf8'));
-        let BT_MAX_NUM = set.BT_MAX_NUM    // 返回的搜索数量 数字越小，响应速度越快
+        let BT_MAX_NUM = set.BT_MAX_NUM  
 
         const $ = cheerio.load(text);
         const itemLst = $('.search-item');
-        let page_max_num = set.page_max_num
         const btMaxNum = BT_MAX_NUM;
         const maxResults = Math.min(btMaxNum, itemLst.length);
 
