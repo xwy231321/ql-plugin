@@ -27,7 +27,7 @@ export class btsearch extends plugin {
             rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: '^#bt(.*)$',
+                    reg: '^#?bt(.*)$',
                     /** 执行方法 */
                     fnc: 'btSearch',
                 }
@@ -49,9 +49,29 @@ export class btsearch extends plugin {
         }
         /** e.msg 用户的命令消息 */
         logger.info('[用户命令]', e.msg)
-        let keyword = e.msg.replace(/#bt/g, "").trim()
+        let keyword = e.msg.replace(/#?bt/g, "").trim()
+        let urlget = 'https://gitee.com/xwy231321/ql-plugin/raw/master/config/bt.json'
+        let r = await fetch(urlget);
+        let obj = await r.json()
+        let url = obj.url
+                const response = await axios.get(`${url}/s/${keyword}_rel_1.html`, { timeout: 5000 });
+                const text = response.data;
+                const $ = cheerio.load(text);
+        const href = $('ul.pagination > li:last-child > a').attr('href');
+        const regex = /_rel_(\d+)\.html/;
+        const result = regex.exec(href);
+        let b = Number(result[1]);
 
-        let msgs = await getBtInfo(keyword, 1)
+        let reply = "共找到" + b + "页，当前设置单次最大至" + set.page_max_num + "页,正在依次发送,若中途报：没有搜索到，则为网络问题"
+        await e.reply(reply)
+        let getnum
+        if(b > set.page_max_num){
+        getnum = set.page_max_num
+        }else{
+        getnum = b
+        }
+       for (let i = 1; i < [getnum + 1]; i++) {
+        let msgs = await getBtInfo(keyword, i)
         let userInfo = {
             nickname: this.e.sender.card || this.e.user_id,
             user_id: this.e.user_id,
@@ -88,7 +108,10 @@ export class btsearch extends plugin {
             }
         }
     }
-}
+    }
+        
+    }
+
 
 async function getBtInfo(keyword, page) {
 let urlget = 'https://gitee.com/xwy231321/ql-plugin/raw/master/config/bt.json'
@@ -108,6 +131,7 @@ let url = obj.url
 
         const $ = cheerio.load(text);
         const itemLst = $('.search-item');
+        let page_max_num = set.page_max_num
         const btMaxNum = BT_MAX_NUM;
         const maxResults = Math.min(btMaxNum, itemLst.length);
 

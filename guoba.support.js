@@ -310,7 +310,7 @@ export function supportGuoba () {
           component: 'Switch'
       },{
           field: 'btsearch.BT_MAX_NUM',
-          label: '单次获取极限数量',
+          label: '单次获取极限数量低于10且页数最大为1生效，否则请定义高于10',
           helpMessage: '修改后直接生效',
           bottomHelpMessage: '单次获取最大数量 默认3',
           component: 'InputNumber',
@@ -321,6 +321,18 @@ export function supportGuoba () {
             placeholder: '请输入数字',
           },
       },{
+        field: 'btsearch.page_max_num',
+        label: '单次获取页数极限数量',
+        helpMessage: '修改后直接生效',
+        bottomHelpMessage: '单次获取最大数量 默认3',
+        component: 'InputNumber',
+        required: true,
+        componentProps: {
+          min: 1,
+          max: 100000000000,
+          placeholder: '请输入数字',
+        },
+    },{
         component: 'Divider',
         label: '清凉图',
       },{
