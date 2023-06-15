@@ -4,6 +4,7 @@ url:
   - https://img.xjh.me/random_img.php?return=302
   - https://api.yimian.xyz/img?type=moe&size=1920x1080
   - https://api.yimian.xyz/img?type=moe
+  - http://api.idcslow.cn/api/ecyimg.php
   - http://api.caonm.net/api/dm/index.php
   - http://apis.liaomengyun.top/API/pic.php
 isopen: true
