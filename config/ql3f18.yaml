@@ -25,6 +25,7 @@ url:
   - https://v2.api-m.com/api/heisi?return=302
   - https://v2.api-m.com/api/baisi?return=302
   - http://api.starchent.top/API/meizi.php?type=image
+  - http://api.starchent.top/API/hs.php
 isopen: true
 isMaster: false
 getcd: 0
