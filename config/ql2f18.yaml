@@ -5,6 +5,7 @@ url:
   - https://api.yimian.xyz/img?type=moe&size=1920x1080
   - https://api.yimian.xyz/img?type=moe
   - http://api.caonm.net/api/dm/index.php
+  - http://apis.liaomengyun.top/API/pic.php
 isopen: true
 isMaster: false
 getcd: 0
