@@ -8,6 +8,7 @@ url:
   - http://api.caonm.net/api/dm/index.php
   - http://shanhe.kim/api/tu/anime.php
   - http://apis.liaomengyun.top/API/pic.php
+  - http://shanhe.kim/api/tu/ercy1.php
 isopen: true
 isMaster: false
 getcd: 0
