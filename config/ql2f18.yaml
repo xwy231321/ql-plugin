@@ -6,6 +6,7 @@ url:
   - https://api.yimian.xyz/img?type=moe
   - http://api.idcslow.cn/api/ecyimg.php
   - http://api.caonm.net/api/dm/index.php
+  - http://shanhe.kim/api/tu/anime.php
   - http://apis.liaomengyun.top/API/pic.php
 isopen: true
 isMaster: false
