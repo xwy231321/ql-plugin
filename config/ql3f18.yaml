@@ -26,6 +26,7 @@ url:
   - https://v2.api-m.com/api/baisi?return=302
   - http://api.starchent.top/API/meizi.php?type=image
   - http://api.starchent.top/API/hs.php
+  - http://www.ggapi.cn/api/girls
 isopen: true
 isMaster: false
 getcd: 0
