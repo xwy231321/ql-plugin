@@ -333,6 +333,15 @@ export function supportGuoba () {
           placeholder: '请输入数字',
         },
     },{
+      field: 'btsearch.reg',
+      label: '触发指令正则',
+      bottomHelpMessage: '支持自行更换触发指令，支持不带#，重启生效',
+      component: 'Input',
+      required: true,
+      componentProps: {
+        placeholder: '请输入触发正则',
+      },
+    },{
         component: 'Divider',
         label: '清凉图',
       },{

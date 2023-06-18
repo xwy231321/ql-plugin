@@ -89,8 +89,8 @@ export const helpList = [
   auth: 'master',
   list: [{
     icon: 32,
-    title: '#敬请期待',
-    desc: '咕咕中'
+    title: '#清凉修改设置帮助',
+    desc: '查看修改设置指令'
   },
   ]
 }]

@@ -4,6 +4,9 @@ import cheerio from 'cheerio'
 import fetch from "node-fetch";
 import fs from 'fs'
 import YAML from 'yaml'
+
+let firstset = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/btsearch.yaml', 'utf8'));
+let secondreg = "^#?"+firstset.reg+"(.*)$"
 /* 
     免责声明
 请注意，使用本代码的用户必须遵守所有适用的法律、规定和政策。本代码仅供参考和教育目的，不应用于任何商业或实际应用。使用本代码造成的任何损失或损害，开发者不承担任何责任。
@@ -22,7 +25,7 @@ export class btsearch extends plugin {
             priority: 5000,
             rule: [
                 {
-                    reg: '^#?bt(.*)$',
+                    reg: secondreg,
                     fnc: 'btSearch',
                 }
             ]
