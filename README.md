@@ -1,11 +1,12 @@
-# 清凉插件(ql-plugin)<a href='https://gitee.com/xwy231321/ql-plugin/stargazers'><img src='https://gitee.com/xwy231321/ql-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
+<div align="center">
+<h1>清凉插件(ql-plugin)</h1>
 
-# 重构中 欢迎尝试
+<a href="https://www.murphysec.com/console/report/1671125207802994688/1671125207849132032" alt="Security Status"><img src="https://www.murphysec.com/platform3/v31/badge/1671125207849132032.svg" /></a>
 
-
-#### 访问量
+[![Gitee](https://img.shields.io/badge/Gitee-清凉插件-black?style=flat-square&logo=gitee)](https://gitee.com/xwy231321/ql-plugin) [![云崽bot](https://img.shields.io/badge/云崽-v3.0.0-black?style=flat-square&logo=dependabot)](https://gitee.com/Le-niao/Yunzai-Bot) [![Group](https://img.shields.io/badge/群号-597427372-red?style=flat-square&logo=GroupMe&logoColor=white)](https://jq.qq.com/?_wv=1027&k=rPN5Kmfx)<a href='https://gitee.com/xwy231321/ql-plugin/stargazers'><img src='https://gitee.com/xwy231321/ql-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
 
 [![访问量](https://profile-counter.glitch.me/ql-plugin/count.svg)](https://gitee.com/xwy231321/ql-plugin)
+
 
 ## 安装教程
 
@@ -31,15 +32,15 @@ pnpm i
 pnpm install --filter=ql-plugin
 ```
 
+
 | 食用方法 | 更新方法 | 查看设置帮助 | 查看版本 |
-|------|------|----|---|
+| :------: | :------: | :----: | :---: |
 | #清凉帮助 | #清凉更新 | #清凉修改设置帮助 | #清凉版本 |
 
-#### 插件功能 
 
-[V2.0.3](./CHANGELOG.md)
 
-# 计划重构中
+## 插件功能 [V2.0.3](./CHANGELOG.md)
+
 
 | 年.龄.限制 | 无 | | |
 |----|---------|-----|-----|
@@ -117,9 +118,13 @@ gitee仓库：[☞Windows](https://gitee.com/xwy231321/cv-plugins-in-resources/b
 
 # 免责声明
 
-1. 功能仅限内部交流与小范围使用，请勿将ql-plugin及yunzai-c-v-plugin用于以盈利为目的的场景
-2. 本插件仅供交流学习使用，如有侵权请联系，会立即删除
-3. 使用本插件造成的一切损失，以及不良影响，由使用者承担
+1) 功能仅限内部交流与小范围使用，请勿将ql-plugin及yunzai-c-v-plugin用于以盈利为目的的场景
+
+2) 本插件仅供交流学习使用，如有侵权请联系，会立即删除
+
+3) 使用本插件造成的一切损失，以及不良影响，由使用者承担
+
+
 
 Yunzai-Bot插件库：[☞Github](https://github.com/yhArcadia/Yunzai-Bot-plugins-index)/[☞Gitee](https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index)
 
@@ -130,3 +135,4 @@ Yunzai-Bot（V2）：[☞Github](https://github.com/yoimiya-kokomi/Yunzai-Bot)/[
 ql-plugin：[☞Gitee](https://gitee.com/xwy231321/ql-plugin)/[☞Github](https://github.com/xwy231321/ql-plugin)
 
 
+</div>
