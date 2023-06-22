@@ -51,8 +51,12 @@ export class mh extends plugin {
     await e.reply('我这去翻翻去', true, {
       recallMsg: 7
     })
-    let images = await qlapi.geturl(set.url, set.getcd, set, e)
-    e.reply(images,{recallMsg: set.chcd})
+    let msg = await qlapi.geturl(set.url, set.getcd, set, e)
+    let dec = firstset.reg+'来啦'
+    let Msg = await qlapi.makeForwardMsg(e, msg, dec)
+    await e.reply(Msg, false, {
+      recallMsg: set.chcd
+    })
     return true
   }
 }
