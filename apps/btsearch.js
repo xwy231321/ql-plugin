@@ -43,7 +43,7 @@ export class btsearch extends plugin {
         }
         logger.info('[用户命令]', e.msg)
         let keyword = e.msg.replace(/#?bt/g, "").trim()
-        let urlget = 'https://gitee.com/xwy231321/ql-plugin/raw/master/config/bt.json'
+        let urlget = 'https://gitee.com/xwy231321/ql-plugin-resource/raw/master/bt.json'
         let r = await fetch(urlget);
         let obj = await r.json()
         let url = obj.url
@@ -108,7 +108,7 @@ export class btsearch extends plugin {
 
 
 async function getBtInfo(keyword, page) {
-let urlget = 'https://gitee.com/xwy231321/ql-plugin/raw/master/config/bt.json'
+let urlget = 'https://gitee.com/xwy231321/ql-plugin-resource/raw/master/bt.json'
 let res = await fetch(urlget);
 let obj = await res.json()
 
@@ -161,7 +161,7 @@ let url = obj.url
 }
 
 async function getDownloadLink(_url) {
-let urlget = 'https://gitee.com/xwy231321/ql-plugin/raw/master/config/bt.json'
+let urlget = 'https://gitee.com/xwy231321/ql-plugin-resource/raw/master/bt.json'
 let res = await fetch(urlget);
 let obj = await res.json()
 
