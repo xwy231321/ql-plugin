@@ -26,24 +26,13 @@ export const helpCfg = {
 
 export const helpList = [
 {
-  group: '清凉插件功能',
+  group: '清凉插件全年龄功能',
   list: [
     {
       icon: 88,
       title: "#清凉图 #3张清凉图",
-      desc: "随机二次元图片"
-    },
-    {
-      icon: 3,
-      title: "#铯p图 #3张铯p图",
-      desc: "p..站的铯图"
-    },
-    {
-      icon: 61,
-      title: "#铯图 #原神铯图",
-      desc: "随机漏•图片"
-    },
-    {
+      desc: "随机二次元图片(可更改限制级别)"
+    },{
       icon: 63,
       title: "#清秀图#3张清秀图",
       desc: "清凉淘宝秀"
@@ -58,17 +47,31 @@ export const helpList = [
       title: "#三元图 #3张三元图",
       desc: "随机三次元图片"
     },{
-      icon: 83,
-      title: "#bt",
-      desc: "bt搜索,后加关键词,需要手动安装axios和cheerio依赖"
-    },
-    {
       icon: 79,
       title: "#图床随机图 #3张图床随机图",
       desc: "图床的图片，你永远不知道下一张是什么"
-    },
-    
-    
+    },{
+      icon: 83,
+      title: "#bt",
+      desc: "bt搜索,后加关键词,需要手动安装axios和cheerio依赖"
+    }
+  ]
+},{
+  group: '清凉插件年龄限制级功能',
+  list: [
+    {
+      icon: 3,
+      title: "#铯p图 #3张铯p图",
+      desc: "p..站的铯图"
+    },{
+      icon: 61,
+      title: "#铯图 #原神铯图",
+      desc: "随机漏•图片"
+    },{
+      icon: 79,
+      title: "#绎泽随机图 #3张绎泽随机图",
+      desc: "绎泽(yi ze)图床，二三次元随机,含年龄限制级"
+    }
   ]
 },{
   group: '管理类命令',

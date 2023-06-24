@@ -1,0 +1,12 @@
+url: https://img.yize.me/imgapi.php?type=image
+isopen: true
+isMaster: false
+getcd: 0
+maxnum: 10
+chcd: 60
+reg: 绎泽随机图
+blackgroup:
+  - 123456
+  - 456789
+  - 123456789
+whitegroup:

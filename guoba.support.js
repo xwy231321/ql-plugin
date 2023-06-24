@@ -301,6 +301,100 @@ export function supportGuoba () {
       valueFormatter: ((value) => Number.parseInt(value)).toString(),
     },
   },{
+    component: 'Divider',
+    label: '绎泽随机图',
+  },{
+    field: 'yize.isopen',
+    label: '功能开关',
+    bottomHelpMessage: '是否开启',
+    component: 'Switch'
+},{
+    field: 'yize.isMaster',
+    label: '主人生效',
+    bottomHelpMessage: '是否开启',
+    component: 'Switch'
+},{
+  field: 'yize.maxnum',
+  label: '单次极限数量',
+  helpMessage: '修改后直接生效',
+  bottomHelpMessage: '单次获取最大数量 默认10',
+  component: 'InputNumber',
+  required: true,
+  componentProps: {
+    min: 1,
+    max: 50,
+    placeholder: '请输入数字',
+  },
+},{
+    field: 'yize.getcd',
+    label: '触发CD',
+    helpMessage: '重启后生效',
+    bottomHelpMessage: '为0则无间隔，单位毫秒，连续两次触发最短间隔（非全局）',
+    component: 'InputNumber',
+    required: true,
+    componentProps: {
+      min: 0,
+      max: 99999999,
+      placeholder: '请输入数字',
+    },
+},{
+    field: 'yize.chcd',
+    label: '撤回CD',
+    helpMessage: '修改后直接生效',
+    bottomHelpMessage: '撤回CD，单位秒，为0不撤回，最大119',
+    component: 'InputNumber',
+    required: true,
+    componentProps: {
+      min: 0,
+      max: 119,
+      placeholder: '请输入数字',
+    },
+},{
+field: 'yize.reg',
+label: '触发指令正则',
+bottomHelpMessage: '支持自行更换触发指令，支持不带#，仅支持单次一张，重启生效',
+component: 'Input',
+required: true,
+componentProps: {
+placeholder: '请输入触发正则',
+},
+},{
+field: 'yize.url',
+label: '请求地址',
+bottomHelpMessage: '支持自行更换，url返回图片格式',
+component: 'Input',
+required: true,
+componentProps: {
+placeholder: '请输入接口请求地址',
+},
+},{
+field: 'yize.whitegroup',
+label: '白名单群',
+bottomHelpMessage: '白名单群，可以设置多个，当存在白名单群时黑名单群配置将失效',
+component: 'GTags',
+componentProps: {
+placeholder: '请输入白名单群',
+allowAdd: true,
+allowDel: true,
+showPrompt: true,
+promptProps: addGroupPromptProps,
+valueFormatter: ((value) => Number.parseInt(value)).toString(),
+},
+},
+{
+field: 'yize.blackgroup',
+label: '黑名单群',
+bottomHelpMessage: '黑名单群，可以设置多个，当存在白名单群时，该配置失效',
+component: 'GTags',
+componentProps: {
+placeholder: '请输入黑名单群',
+allowAdd: true,
+allowDel: true,
+showPrompt: true,
+promptProps: addGroupPromptProps,
+valueFormatter: ((value) => Number.parseInt(value)).toString(),
+},
+},{
           component: 'Divider',
           label: 'bt搜索',
         },{

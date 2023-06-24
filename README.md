@@ -39,7 +39,7 @@ pnpm install --filter=ql-plugin
 
 
 
-## 插件功能 [V2.0.3](./CHANGELOG.md)
+## 插件功能 [V2.0.4](./CHANGELOG.md)
 
 
 | 年.龄.限制 | 无 | | |
@@ -61,6 +61,7 @@ pnpm install --filter=ql-plugin
 | 原神cos图 | 10 | 关闭 | 0% |
 | p18图 | 10 | 开启 | 90% |
 | 铯图 | 10 | 开启 | 90% |
+| 绎泽随机图 | 10 | 开启 | new |
 
 | 其他功能 | | | |
 |--|--|--|---|
@@ -100,6 +101,7 @@ Q群：[597427372](https://jq.qq.com/?_wv=1027&k=rPN5Kmfx)（交流.外群）
 | 小飞  | 消息风控处理等   |
 | 星念  | 仓库动态检测 |
 | Parker Liang  | 图库支持 |
+| 绎泽  | 图床支持 |
 
 #### 赞助
 

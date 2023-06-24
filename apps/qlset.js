@@ -13,6 +13,7 @@ var mh = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/mh.yaml', 
 var p18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/p18.yaml', 'utf8'));
 var qltao = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/qltao.yaml', 'utf8'));
 var btsearch = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/btsearch.yaml', 'utf8'));
+var yize = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/yize.yaml', 'utf8'));
 
 let setreg = '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)(.*)(开启|关闭|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$'
 export class ql_set extends plugin {
@@ -54,6 +55,10 @@ export class ql_set extends plugin {
           },{
             reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+btsearch.reg+')(开启|关闭|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
             fnc: 'setbtsearch',
+            permission: "master",
+          },{
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+yize.reg+')(开启|关闭|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
+            fnc: 'setyize',
             permission: "master",
           },{
             reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)修改设置(帮助|help|指令|菜单|命令)$',
@@ -903,6 +908,120 @@ export class ql_set extends plugin {
             }
         }
         fs.writeFileSync('./plugins/ql-plugin/config/btsearch.yaml',YAML.stringify(btsearch),'utf8')
+        e.reply('已执行')
+        return true
+      }
+      async setyize(e){
+        let reg = new RegExp(setreg).exec(e.msg);
+        if(reg[4] === '开启'||reg[4] === '关闭'){
+          let isopen
+          if(reg[4] === '开启'){
+            isopen = true
+          }else if(reg[4] === '关闭'){
+            isopen = false
+          }
+          yize.isopen = isopen
+        }else if(reg[4] === '仅主人生效开启'||reg[4] === '仅主人生效关闭'){
+          let isMaster
+          if(reg[4] === '仅主人生效开启'){
+            isMaster = true
+          }else if(reg[4] === '仅主人生效关闭'){
+            isMaster = false
+          }
+          yize.isMaster = isMaster
+        }else if(reg[4] === '触发间隔'){
+          if(Number.isInteger(Number(reg[5]))){
+          let getcd = Number(reg[5])
+          yize.getcd = getcd
+          }else{
+            e.reply('请以数字结尾')
+            return true
+          }
+        }else if(reg[4] === '撤回时间'){
+          if(Number.isInteger(Number(reg[5]))){
+          let chcd = Number(reg[5])
+          yize.chcd = chcd
+          }else{
+            e.reply('请以数字结尾')
+            return true
+         }
+        }else if(reg[4] === '最大数量'){
+          if(Number.isInteger(Number(reg[5]))){
+          let maxnum = Number(reg[5])
+          yize.maxnum = maxnum
+          }else{
+            e.reply('请以数字结尾')
+            return true
+          }
+        }else if(reg[4] === '黑名单群删除'||reg[4] === '黑名单群添加'){
+          let blackgroup = yize.blackgroup
+          if(reg[4] === '黑名单群删除'){
+            if(Number.isInteger(Number(reg[5]))){
+              let index = blackgroup.indexOf(Number(reg[5]))
+              if(index > -1){
+                blackgroup.splice(index, 1)
+                yize.blackgroup = blackgroup
+              }else{
+                e.reply('黑名单群没有这个')
+                return true
+              }
+            }else{
+              e.reply('请以数字群号结尾')
+              return true
+            }
+          }else if(reg[4] === '黑名单群添加'){
+            if(Number.isInteger(Number(reg[5]))){
+              blackgroup.push(Number(reg[5]))
+              yize.blackgroup = blackgroup
+            }else{
+              e.reply('请以数字群号结尾')
+              return true
+            }
+          }
+        }else if(reg[4] === '白名单群删除'||reg[4] === '白名单群添加'){
+          let whitegroup = yize.whitegroup
+          if(reg[4] === '白名单群删除'){
+            if(Number.isInteger(Number(reg[5]))){
+              let index = whitegroup.indexOf(Number(reg[5]))
+              if(index > -1){
+                whitegroup.splice(index, 1)
+                yize.whitegroup = whitegroup
+              }else{
+                e.reply('白名单群没有这个')
+                return true
+              }
+            }else{
+              e.reply('请以数字群号结尾')
+              return true
+            }
+          }else if(reg[4] === '白名单群添加'){
+            if(Number.isInteger(Number(reg[5]))){
+              whitegroup.push(Number(reg[5]))
+              yize.whitegroup = whitegroup
+            }else{
+              e.reply('请以数字群号结尾')
+              return true
+            }
+          }
+        }else if(reg[4] === '指令' ||reg[4] === '正则'){
+          let regget = reg[5]
+          yize.reg = regget
+        }else if(reg[4] === '源添加'||reg[4] === '源删除'){
+          let urllist = yize.url
+          if (reg[4] === '源添加'){
+            urllist.push(reg[5])
+            yize.url = urllist
+          }else if (reg[4] === '源删除'){
+            let index = whitegroup.indexOf(reg[5])
+              if(index > -1){
+                urllist.splice(index, 1)
+                yize.url = urllist
+              }else{
+                e.reply('源列表无此源')
+              }
+          }
+        }
+        fs.writeFileSync('./plugins/ql-plugin/config/yize.yaml',YAML.stringify(yize),'utf8')
         e.reply('已执行')
         return true
       }
