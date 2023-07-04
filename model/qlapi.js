@@ -162,8 +162,8 @@ export async function puppeteer(url) {
   let aimage = await segment.image(await page.screenshot( {
     fullPage: true
   }))
-  return aimage
   await browser.close();
+  return aimage
 }
 
 /**
@@ -186,13 +186,15 @@ export async function random(min, max) {
 */
 export async function makeForwardMsg (e, msg = [], dec = '') {
   let nickname = Bot.nickname
-  if (e.isGroup) {
-    let info = await Bot.getGroupMemberInfo(e.group_id, Bot.uin)
-    nickname = info.card || info.nickname
-  }
+  //if (e.isGroup) {
+   // let info = await Bot.getGroupMemberInfo(e.group_id, Bot.uin)
+   // nickname = info.card || info.nickname
+ // }
   let userInfo = {
-    nickname: Bot.nickname,
-    user_id: Bot.uin,
+    nickname: "ql-plugin",
+    //Bot.nickname
+    user_id: 80000000,
+    //Bot.uin
     nickname
   }
 
