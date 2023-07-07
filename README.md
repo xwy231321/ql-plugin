@@ -138,7 +138,7 @@ ql-plugin：[☞Gitee](https://gitee.com/xwy231321/ql-plugin)/[☞Github](https:
 
 友情网站
 
-小白api：[https://xiaobapi.top/api/](https://xiaobapi.top/api/)
+小冰api：[https://xiaobapi.top/api/](https://xiaobapi.top/api/)
 
 
 </div>
