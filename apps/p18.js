@@ -1,3 +1,7 @@
+/*
+* 当前该接口已开启付费调用模式，以下为网址原文
+* 接口首次接入付费函数测试，你看到这条json后，说明接口已接入付费功能，1毛钱=500调用量，以此类推，很便宜的说，如需继续使用接口，请联系QQ490593431或聊群996413740进行兑换调用量（若联系不上，在API主页闪烁字体bug留言板中留下你的联系方式我来找你），再不攒点消费，吃不起饭的说，不过分吧（我赌没人会来，没人会再用我的，更没人会认真读完全部内容，若是真有人找上门来会赠送一些额外量给你）
+
 import fetch from "node-fetch";
 import plugin from '../../../lib/plugins/plugin.js';
 import fs from 'fs'
@@ -62,3 +66,5 @@ export class qlp18 extends plugin {
     return true
   }
 }
+
+*/

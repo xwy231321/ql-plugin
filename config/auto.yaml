@@ -1,0 +1,13 @@
+mh: true
+mhmax: 40
+ql2f18: true
+ql2f18max: 40
+ql2r18: true
+ql2r18max: 40
+ql3f18: true
+ql3f18max: 40
+qltao: true
+qltaomax: 40
+yize: true
+yizemax: 40
+cron: "0 0 18 * * ?"
