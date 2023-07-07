@@ -42,6 +42,18 @@ export class qlautoget extends plugin{
         if(auto.mh){
             await qlauto.getimage(mh.url, `mh`, auto.mhmax)
         }
+
+        if(auto.p18){
+            if(set.token === `替换成你的账号`||set.password === `替换成你的密码`){
+                await e.reply(`请先联系QQ490593431或聊群996413740兑换账密，1块5000+送2000，共7000调用量`)
+              }else{
+                let usedurl = p18.url+`?token=`+set.token+`&password=`+set.password
+                let res = await fetch(usedurl);
+                let obj = await res.json()
+                let urls = obj.data[0].urls.original
+                await qlauto.getimage(urls, `p18`, auto.p18max)
+              }
+        }
         
         if(auto.ql2f18){
             let urls = ql2f18.url

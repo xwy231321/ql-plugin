@@ -111,7 +111,6 @@ export function supportGuoba () {
             valueFormatter: ((value) => Number.parseInt(value)).toString(),
           },
         },
-        /*
 
         {
                 component: 'Divider',
@@ -127,6 +126,24 @@ export function supportGuoba () {
                 bottomHelpMessage: '是否开启',
                 component: 'Switch'
             },{
+              field: 'p18.token',
+              label: '您的账号',
+              bottomHelpMessage: '联系QQ490593431或聊群996413740兑换账密，1块5000+送2000，共7000调用量',
+              component: 'Input',
+              required: true,
+              componentProps: {
+                placeholder: '请输入您的账号',
+              },
+              },{
+                field: 'p18.password',
+                label: '您的密码',
+                bottomHelpMessage: '联系QQ490593431或聊群996413740兑换账密，1块5000+送2000，共7000调用量',
+                component: 'Input',
+                required: true,
+                componentProps: {
+                  placeholder: '请输入您的密码',
+                },
+              },{
                 field: 'p18.maxnum',
                 label: '单次极限数量',
                 helpMessage: '修改后直接生效',
@@ -171,7 +188,7 @@ export function supportGuoba () {
           componentProps: {
             placeholder: '请输入触发正则',
           },
-        },{
+             },{
           field: 'p18.url',
           label: '请求地址',
           bottomHelpMessage: '支持自行更换，url返回图片格式',
@@ -207,8 +224,7 @@ export function supportGuoba () {
             promptProps: addGroupPromptProps,
             valueFormatter: ((value) => Number.parseInt(value)).toString(),
           },
-        },*/
-        {
+        }, {
           component: 'Divider',
           label: '图床随机图',
         },{

@@ -59,6 +59,7 @@ pnpm install --filter=ql-plugin
 | 名称 | 默认单次最大数量 | 默认开启状态 | 重构进度 |
 | 三铯图 | 10 | 关闭 | 0% |
 | 原神cos图 | 10 | 关闭 | 0% |
+| p18图 | 10 | 开启 | 90% |
 | 铯图 | 10 | 开启 | 90% |
 | 绎泽随机图 | 10 | 开启 | new |
 
@@ -133,6 +134,11 @@ Yunzai-Bot（V3）：[☞Github](https://github.com/Le-niao/Yunzai-Bot)/[☞Gite
 Yunzai-Bot（V2）：[☞Github](https://github.com/yoimiya-kokomi/Yunzai-Bot)/[☞Gitee](https://gitee.com/yoimiya-kokomi/Yunzai-Bot) 
 
 ql-plugin：[☞Gitee](https://gitee.com/xwy231321/ql-plugin)/[☞Github](https://github.com/xwy231321/ql-plugin)
+
+
+友情网站
+
+小白api：[https://xiaobapi.top/api/](https://xiaobapi.top/api/)
 
 
 </div>

@@ -1,4 +1,6 @@
 url: https://xiaobapi.top/api/xb/api/pixiv_r18.php
+token: 替换成你的账号
+password: 替换成你的密码
 isopen: true
 isMaster: false
 getcd: 0

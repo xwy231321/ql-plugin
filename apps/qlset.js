@@ -15,7 +15,7 @@ var qltao = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/qltao.y
 var btsearch = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/btsearch.yaml', 'utf8'));
 var yize = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/yize.yaml', 'utf8'));
 
-let setreg = '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)(.*)(开启|关闭|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$'
+let setreg = '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)(.*)(开启|关闭|账号|密码|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$'
 export class ql_set extends plugin {
     constructor() {
       super({
@@ -45,7 +45,7 @@ export class ql_set extends plugin {
             fnc: 'setmh',
             permission: "master",
           },{
-            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+p18.reg+')(开启|关闭|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+p18.reg+')(开启|关闭|源添加|账号|密码|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
             fnc: 'setp18',
             permission: "master",
           },{
@@ -651,7 +651,13 @@ export class ql_set extends plugin {
       }
       async setp18(e){
         let reg = new RegExp(setreg).exec(e.msg);
-        if(reg[4] === '开启'||reg[4] === '关闭'){
+        if(reg[4] === '账号'){
+          let tokenget = reg[5]
+          p18.token = tokenget
+        }else if(reg[4] === '密码'){
+          let passwordget = reg[5]
+          p18.password = passwordget
+        }else if(reg[4] === '开启'||reg[4] === '关闭'){
           let isopen
           if(reg[4] === '开启'){
             isopen = true
@@ -1030,14 +1036,15 @@ export class ql_set extends plugin {
         let msg = []
         msg.push('修改指令为 #(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)+功能名称+配置项+其他')
         msg.push('其中#可以省略 每个括号内任选其一即可 功能名称为触发指令，例如清秀图')
-        msg.push('配置项为(开启|关闭|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)')
+        msg.push('配置项为(开启|关闭|账号|密码|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)')
         msg.push('若配置项为开启或关闭时无 其他')
         msg.push('仅清凉图含配置项类型混合或全年龄或限制级')
+        msg.push('仅铯p图含配置项账号和密码，且账密错误或调用次数耗尽会报错')
         msg.push('仅bt含最大页数配置项，且bt仅含开启/关闭（且为群内开关）、最大数量、最大页数、正则/指令四个配置项')
         msg.push('黑/白名单群或者最大数量等为数字的配置项，指令中的 其他 为数字，请勿加单位，请以数字结尾，群一次只能执行一个')
         msg.push('修改正则、触发间隔需要重启才会生效，其他为热更新')
         msg.push('撤回时间单位为秒，触发间隔单位为毫秒')
-        msg.push('例如 #清凉设置清秀图开启  #清凉设置清秀图撤回时间60')
+        msg.push('例如 #清凉设置清秀图开启  #清凉更改清秀图撤回时间60  #ql设置铯p图账号xxxxxx')
         let dec = '点击查看清凉设置指令帮助'
         let Msg = await qlapi.makeForwardMsg(e, msg, dec)
         await e.reply(Msg)

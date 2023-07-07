@@ -59,12 +59,11 @@ export const helpList = [
 },{
   group: '清凉插件年龄限制级功能',
   list: [
-    /*{
+    {
       icon: 3,
       title: "#铯p图 #3张铯p图",
       desc: "p..站的铯图"
-    },*/
-    {
+    },{
       icon: 61,
       title: "#铯图 #原神铯图",
       desc: "随机漏•图片"
