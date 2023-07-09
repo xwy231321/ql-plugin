@@ -4,16 +4,18 @@ import { render , Data } from '../components/index.js'
 import fs from 'fs'
 import YAML from 'yaml'
 import * as qlapi from "../../ql-plugin/model/qlapi.js";
+const Path = process.cwd();
+let ql2f18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2f18.yaml', 'utf8'));
+let ql2frql = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2frql.yaml', 'utf8'));
+let ql2r18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2r18.yaml', 'utf8'));
+let ql3f18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql3f18.yaml', 'utf8'));
+let mh = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/mh.yaml', 'utf8'));
+let p18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/p18.yaml', 'utf8'));
+let qltao = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/qltao.yaml', 'utf8'));
+let yize = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/yize.yaml', 'utf8'));
+let btsearch = await YAML.parse(fs.readFileSync(`${Path}/plugins/ql-plugin/config/btsearch.yaml`, 'utf8'));
 
-var ql2f18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2f18.yaml', 'utf8'));
-var ql2frql = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2frql.yaml', 'utf8'));
-var ql2r18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2r18.yaml', 'utf8'));
-var ql3f18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql3f18.yaml', 'utf8'));
-var mh = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/mh.yaml', 'utf8'));
-var p18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/p18.yaml', 'utf8'));
-var qltao = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/qltao.yaml', 'utf8'));
-var btsearch = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/btsearch.yaml', 'utf8'));
-var yize = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/yize.yaml', 'utf8'));
+
 
 let setreg = '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)(.*)(开启|关闭|账号|密码|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$'
 export class ql_set extends plugin {
@@ -64,11 +66,313 @@ export class ql_set extends plugin {
             reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)修改设置(帮助|help|指令|菜单|命令)$',
             fnc: 'sethelp',
             permission: "master",
+          },{
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)设置$',
+            fnc: 'setting',
+            permission: "master",
+          },{
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)设置('+ql2frql.reg+'|'+ql2f18.reg+'|'+ql2r18.reg+'|'+ql3f18.reg+'|'+mh.reg+'|'+p18.reg+'|'+qltao.reg+'|'+btsearch.reg+'|'+yize.reg+')$',
+            fnc: 'setting_other',
+            permission: "master",
           }
         ]
       });
     }
+
+    async aql2frql(e){
+      let ql2frql = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2frql.yaml', 'utf8'));
+      let data ={
+
+        ql2frqlisopen: getStatus(ql2frql.isopen),
+        ql2frqlismaster: getStatus(ql2frql.isMaster),
+        ql2frqlgetcd: Number(ql2frql.getcd),
+        ql2frqlchcd: Number(ql2frql.chcd),
+        ql2frqlmaxnum: Number(ql2frql.maxnum),
+        ql2frqllx: getStatuslx(Number(ql2frql.lx)),
+        ql2frqlreg: ql2frql.reg,
+
+      }
+      await render('admin/ql2frql', {
+        ...data,
+        bg: await rodom()
+      }, {
+        e,
+        scale: 1.4
+      })
+    }
+    async bql2f18(e){
+      let ql2f18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2f18.yaml', 'utf8'));
+      let data ={
+  
+        ql2f18isopen: getStatus(ql2f18.isopen),
+        ql2f18ismaster: getStatus(ql2f18.isMaster),
+        ql2f18getcd: Number(ql2f18.getcd),
+        ql2f18chcd: Number(ql2f18.chcd),
+        ql2f18maxnum: Number(ql2f18.maxnum),
+        ql2f18reg: ql2f18.reg,
+
+      }
+      await render('admin/ql2f18', {
+        ...data,
+        bg: await rodom()
+      }, {
+        e,
+        scale: 1.4
+      })
+
+    }
+    async cql2r18(e){
+      let ql2r18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2r18.yaml', 'utf8'));
+      let data ={
+  
+        ql2r18isopen: getStatus(ql2r18.isopen),
+        ql2r18ismaster: getStatus(ql2r18.isMaster),
+        ql2r18getcd: Number(ql2r18.getcd),
+        ql2r18chcd: Number(ql2r18.chcd),
+        ql2r18maxnum: Number(ql2r18.maxnum),
+        ql2r18reg: ql2r18.reg,
+
+        }
+      await render('admin/ql2r18', {
+        ...data,
+        bg: await rodom()
+      }, {
+        e,
+        scale: 1.4
+      })
+
+    }
+    async dql3f18(e){
+      let ql3f18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql3f18.yaml', 'utf8'));
+      let data ={
+
+        ql3f18isopen: getStatus(ql3f18.isopen),
+        ql3f18ismaster: getStatus(ql3f18.isMaster),
+        ql3f18getcd: Number(ql3f18.getcd),
+        ql3f18chcd: Number(ql3f18.chcd),
+        ql3f18maxnum: Number(ql3f18.maxnum),
+        ql3f18reg: ql3f18.reg,
+
+      }
+      await render('admin/ql3f18', {
+        ...data,
+        bg: await rodom()
+      }, {
+        e,
+        scale: 1.4
+      })
+    }
+    async emh(e){
+      let mh = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/mh.yaml', 'utf8'));
+      let data ={
+
+        mhisopen: getStatus(mh.isopen),
+        mhismaster: getStatus(mh.isMaster),
+        mhgetcd: Number(mh.getcd),
+        mhchcd: Number(mh.chcd),
+        mhmaxnum: Number(mh.maxnum),
+        mhreg: mh.reg,
+
+      }
+      await render('admin/mh', {
+        ...data,
+        bg: await rodom()
+      }, {
+        e,
+        scale: 1.4
+      })
+    }
+    async fp18(e){
+      let p18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/p18.yaml', 'utf8'));
+      let data ={
+
+        p18isopen: getStatus(p18.isopen),
+        p18ismaster: getStatus(p18.isMaster),
+        p18getcd: Number(p18.getcd),
+        p18chcd: Number(p18.chcd),
+        p18maxnum: Number(p18.maxnum),
+        p18reg: p18.reg,
+        p18token: p18.token,
+
+      }
+      await render('admin/p18', {
+        ...data,
+        bg: await rodom()
+      }, {
+        e,
+        scale: 1.4
+      })}
+      async gqltao(e){
+        let qltao = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/qltao.yaml', 'utf8'));
+        let data ={
+
+          qltaoisopen: getStatus(qltao.isopen),
+          qltaoismaster: getStatus(qltao.isMaster),
+          qltaogetcd: Number(qltao.getcd),
+          qltaochcd: Number(qltao.chcd),
+          qltaomaxnum: Number(qltao.maxnum),
+          qltaoreg: qltao.reg,
+  
+        }
+        await render('admin/qltao', {
+          ...data,
+          bg: await rodom()
+        }, {
+          e,
+          scale: 1.4
+        })
+
+      }
+      async hbtsearch(e){
+        let btsearch = await YAML.parse(fs.readFileSync(`${Path}/plugins/ql-plugin/config/btsearch.yaml`, 'utf8'));
+        let data ={
+
+          btsearchisopen: getStatus(btsearch.IS_GROUPS),
+          btsearchpagemaxnum: Number(btsearch.page_max_num),
+          btsearchgetmaxnum: Number(btsearch.BT_MAX_NUM),
+          btsearchreg: btsearch.reg,
+        }
+        await render('admin/btsearch', {
+          ...data,
+          bg: await rodom()
+        }, {
+          e,
+          scale: 1.4
+        })
+
+      }
+      async iyize(e){
+        let yize = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/yize.yaml', 'utf8'));
+        let data ={
+
+          yizeisopen: getStatus(yize.isopen),
+          yizeismaster: getStatus(yize.isMaster),
+          yizegetcd: Number(yize.getcd),
+          yizechcd: Number(yize.chcd),
+          yizemaxnum: Number(yize.maxnum),
+          yizereg: yize.reg,
+  
+        }
+        await render('admin/yize', {
+          ...data,
+          bg: await rodom()
+        }, {
+          e,
+          scale: 1.4
+        })}
+    async setting_other(e) {
+      let set_other_reg = '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)设置(.*)$'
+     let reg = new RegExp(set_other_reg).exec(e.msg);
+      if(reg[2] === ql2frql.reg){
+        this.aql2frql(e)
+      }else if(reg[2] === ql2f18.reg){
+        this.bql2f18(e)
+      }else if(reg[2] === ql2r18.reg){
+        this.cql2r18(e)
+      }else if(reg[2] === ql3f18.reg){
+        this.dql3f18(e)
+      }else if(reg[2] === mh.reg){
+        this.emh(e)
+      }else if(reg[2] === p18.reg){
+        this.fp18(e)
+      }else if(reg[2] === qltao.reg){
+        this.gqltao(e)
+      }else if(reg[2] === btsearch.reg){
+        this.hbtsearch(e)
+      }else if(reg[2] === yize.reg){
+        this.iyize(e)
+      }else{
+        this.fp18(e)
+      }
+      
+    }
+
+    async setting(e) {
+      let ql2f18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2f18.yaml', 'utf8'));
+      let ql2frql = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2frql.yaml', 'utf8'));
+      let ql2r18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2r18.yaml', 'utf8'));
+      let ql3f18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql3f18.yaml', 'utf8'));
+      let mh = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/mh.yaml', 'utf8'));
+      let p18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/p18.yaml', 'utf8'));
+      let qltao = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/qltao.yaml', 'utf8'));
+      let yize = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/yize.yaml', 'utf8'));
+      let btsearch = await YAML.parse(fs.readFileSync(`${Path}/plugins/ql-plugin/config/btsearch.yaml`, 'utf8'));
+
+      let data ={
+
+        ql2frqlisopen: getStatus(ql2frql.isopen),
+        ql2frqlismaster: getStatus(ql2frql.isMaster),
+        ql2frqlgetcd: Number(ql2frql.getcd),
+        ql2frqlchcd: Number(ql2frql.chcd),
+        ql2frqlmaxnum: Number(ql2frql.maxnum),
+        ql2frqllx: getStatuslx(Number(ql2frql.lx)),
+        ql2frqlreg: ql2frql.reg,
+
+        ql2f18isopen: getStatus(ql2f18.isopen),
+        ql2f18ismaster: getStatus(ql2f18.isMaster),
+        ql2f18getcd: Number(ql2f18.getcd),
+        ql2f18chcd: Number(ql2f18.chcd),
+        ql2f18maxnum: Number(ql2f18.maxnum),
+        ql2f18reg: ql2f18.reg,
+
+        ql2r18isopen: getStatus(ql2r18.isopen),
+        ql2r18ismaster: getStatus(ql2r18.isMaster),
+        ql2r18getcd: Number(ql2r18.getcd),
+        ql2r18chcd: Number(ql2r18.chcd),
+        ql2r18maxnum: Number(ql2r18.maxnum),
+        ql2r18reg: ql2r18.reg,
+
+        ql3f18isopen: getStatus(ql3f18.isopen),
+        ql3f18ismaster: getStatus(ql3f18.isMaster),
+        ql3f18getcd: Number(ql3f18.getcd),
+        ql3f18chcd: Number(ql3f18.chcd),
+        ql3f18maxnum: Number(ql3f18.maxnum),
+        ql3f18reg: ql3f18.reg,
+
+        mhisopen: getStatus(mh.isopen),
+        mhismaster: getStatus(mh.isMaster),
+        mhgetcd: Number(mh.getcd),
+        mhchcd: Number(mh.chcd),
+        mhmaxnum: Number(mh.maxnum),
+        mhreg: mh.reg,
+
+        p18isopen: getStatus(p18.isopen),
+        p18ismaster: getStatus(p18.isMaster),
+        p18getcd: Number(p18.getcd),
+        p18chcd: Number(p18.chcd),
+        p18maxnum: Number(p18.maxnum),
+        p18reg: p18.reg,
+        p18token: p18.token,
+
+        qltaoisopen: getStatus(qltao.isopen),
+        qltaoismaster: getStatus(qltao.isMaster),
+        qltaogetcd: Number(qltao.getcd),
+        qltaochcd: Number(qltao.chcd),
+        qltaomaxnum: Number(qltao.maxnum),
+        qltaoreg: qltao.reg,
+
+        yizeisopen: getStatus(yize.isopen),
+        yizeismaster: getStatus(yize.isMaster),
+        yizegetcd: Number(yize.getcd),
+        yizechcd: Number(yize.chcd),
+        yizemaxnum: Number(yize.maxnum),
+        yizereg: yize.reg,
+
+        btsearchisopen: getStatus(btsearch.IS_GROUPS),
+        btsearchpagemaxnum: Number(btsearch.page_max_num),
+        btsearchgetmaxnum: Number(btsearch.BT_MAX_NUM),
+        btsearchreg: btsearch.reg,
+      }
+      await render('admin/index', {
+        ...data,
+        bg: await rodom()
+      }, {
+        e,
+        scale: 1.4
+      })
+    }
     async setql2frql(e) {
+      let ql2frql = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2frql.yaml', 'utf8'));
       let reg = new RegExp(setreg).exec(e.msg);
         if(reg[4] === '开启'||reg[4] === '关闭'){
           let isopen
@@ -188,11 +492,12 @@ export class ql_set extends plugin {
           }
         }
         fs.writeFileSync('./plugins/ql-plugin/config/ql2frql.yaml',YAML.stringify(ql2frql),'utf8')
-        e.reply('已执行')
+        this.aql2frql(e)
         return true
       
     }
     async setql2f18(e){
+      let ql2f18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2f18.yaml', 'utf8'));
       let reg = new RegExp(setreg).exec(e.msg);
         if(reg[4] === '开启'||reg[4] === '关闭'){
           let isopen
@@ -303,11 +608,12 @@ export class ql_set extends plugin {
           }
         }
         fs.writeFileSync('./plugins/ql-plugin/config/ql2f18.yaml',YAML.stringify(ql2f18),'utf8')
-        e.reply('已执行')
+        this.bql2f18(e)
         return true
       }
 
       async setql2r18(e){
+        let ql2r18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql2r18.yaml', 'utf8'));
         let reg = new RegExp(setreg).exec(e.msg);
         if(reg[4] === '开启'||reg[4] === '关闭'){
           let isopen
@@ -418,10 +724,11 @@ export class ql_set extends plugin {
           }
         }
         fs.writeFileSync('./plugins/ql-plugin/config/ql2r18.yaml',YAML.stringify(ql2r18),'utf8')
-        e.reply('已执行')
+        this.cql2r18(e)
         return true
       }
       async setql3f18(e){
+        let ql3f18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/ql3f18.yaml', 'utf8'));
         let reg = new RegExp(setreg).exec(e.msg);
         if(reg[4] === '开启'||reg[4] === '关闭'){
           let isopen
@@ -532,10 +839,11 @@ export class ql_set extends plugin {
           }
         }
         fs.writeFileSync('./plugins/ql-plugin/config/ql3f18.yaml',YAML.stringify(ql3f18),'utf8')
-        e.reply('已执行')
+        this.dql3f18(e)
         return true
       }
       async setmh(e){
+        let mh = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/mh.yaml', 'utf8'));
         let reg = new RegExp(setreg).exec(e.msg);
         if(reg[4] === '开启'||reg[4] === '关闭'){
           let isopen
@@ -646,10 +954,11 @@ export class ql_set extends plugin {
           }
         }
         fs.writeFileSync('./plugins/ql-plugin/config/mh.yaml',YAML.stringify(mh),'utf8')
-        e.reply('已执行')
+        this.emh(e)
         return true
       }
       async setp18(e){
+        let p18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/p18.yaml', 'utf8'));
         let reg = new RegExp(setreg).exec(e.msg);
         if(reg[4] === '账号'){
           let tokenget = reg[5]
@@ -766,10 +1075,11 @@ export class ql_set extends plugin {
           }
         }
         fs.writeFileSync('./plugins/ql-plugin/config/p18.yaml',YAML.stringify(p18),'utf8')
-        e.reply('已执行')
+        this.fp18(e)
         return true
       }
       async setqltao(e){
+        let qltao = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/qltao.yaml', 'utf8'));
         let reg = new RegExp(setreg).exec(e.msg);
         if(reg[4] === '开启'||reg[4] === '关闭'){
           let isopen
@@ -880,10 +1190,11 @@ export class ql_set extends plugin {
           }
         }
         fs.writeFileSync('./plugins/ql-plugin/config/qltao.yaml',YAML.stringify(qltao),'utf8')
-        e.reply('已执行')
+        this.gqltao(e)
         return true
       }
       async setbtsearch(e){
+        let btsearch = await YAML.parse(fs.readFileSync(`${Path}/plugins/ql-plugin/config/btsearch.yaml`, 'utf8'));
         let reg = new RegExp(setreg).exec(e.msg);
         if(reg[4] === '开启'||reg[4] === '关闭'){
           let isopen
@@ -914,10 +1225,11 @@ export class ql_set extends plugin {
             }
         }
         fs.writeFileSync('./plugins/ql-plugin/config/btsearch.yaml',YAML.stringify(btsearch),'utf8')
-        e.reply('已执行')
+        this.hbtsearch(e)
         return true
       }
       async setyize(e){
+        let yize = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/yize.yaml', 'utf8'));
         let reg = new RegExp(setreg).exec(e.msg);
         if(reg[4] === '开启'||reg[4] === '关闭'){
           let isopen
@@ -1028,7 +1340,7 @@ export class ql_set extends plugin {
           }
         }
         fs.writeFileSync('./plugins/ql-plugin/config/yize.yaml',YAML.stringify(yize),'utf8')
-        e.reply('已执行')
+        this.iyize(e)
         return true
       }
     
@@ -1050,4 +1362,32 @@ export class ql_set extends plugin {
         await e.reply(Msg)
         return true
    }
+}
+
+const rodom = async function () {
+  let image = fs.readdirSync('./plugins/ql-plugin/resources/admin/imgs/bg')
+  let listImg = []
+  for (let val of image) {
+    listImg.push(val)
+  }
+  let imgs = listImg.length == 1 ? listImg[0] : listImg[lodash.random(0, listImg.length - 1)]
+  return imgs
+}
+
+const getStatus = function (rote) {
+  if (rote) {
+      return `<div class="cfg-status" >已开启</div>`;
+  } else {
+      return `<div class="cfg-status status-off">已关闭</div>`;
+  }
+
+}
+const getStatuslx = function (rotes) {
+  if (rotes = 0) {
+      return `<div class="cfg-status" >全年龄</div>`;
+  } else if(rotes = 1) {
+      return `<div class="cfg-status" >限制级</div>`;
+  }else if(rotes = 2) {
+    return `<div class="cfg-status" >混合模式</div>`;
+}
 }

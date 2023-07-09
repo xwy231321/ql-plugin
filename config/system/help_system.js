@@ -77,13 +77,13 @@ export const helpList = [
   group: '管理类命令',
   auth: 'master',
   list: [{
-    icon: 32,
-    title: '#清凉修改设置帮助',
-    desc: '查看修改设置指令'
-  },{
     icon: 62,
-    title: "#清凉设置(敬请期待)",
+    title: "#清凉设置",
     desc: "当前各功能启用状况"
+  },{
+    icon: 32,
+    title: "#清凉设置 + 功能名称",
+    desc: "查看该功能的设置"
   },
   {
     icon: 67,
@@ -93,7 +93,7 @@ export const helpList = [
   {
     icon: 71,
     title: "#清凉更新 #清凉强制更新",
-    desc: "#清凉(强制)更新"
+    desc: "清凉(强制)更新指令"
   }
   ]
 }]

@@ -1,0 +1,84 @@
+{{extend defaultLayout}}
+
+{{block 'css'}}
+
+<link rel="stylesheet" type="text/css" href="{{_res_path}}/admin/index.css" />
+<style>
+	.container {
+		background: url("{{_res_path}}/admin/imgs/bg/{{bg}}") #000144 top !important;
+		background-size: cover !important;
+		width: 800px;
+	}
+</style>
+{{/block}}
+{{block 'main'}}
+
+<div class="info_box">
+	<div class="head-box type{{bgType}}">
+		<div class="label">#清凉设置</div>
+		<div class="title">清凉插件管理面板</div>
+	</div>
+</div>
+
+ <div class="cfg-box">
+    <div class="cfg-group">图床随机图</div>
+    <ul class="cfg-ul">
+
+        <li class="cfg-li">
+            <div class="cfg-line">
+                开启状态
+                <span class="cfg-hint">#清凉设置图床随机图 + 开启/关闭</span>
+                {{@mhisopen}}
+            </div>
+            <div class="cfg-desc">开启状态</div>
+        </li>
+
+        <li class="cfg-li">
+            <div class="cfg-line">
+                仅主人生效状态
+                <span class="cfg-hint">#清凉设置图床随机图仅主人生效 + 开启/关闭</span>
+                {{@mhismaster}}
+            </div>
+            <div class="cfg-desc">仅主人生效开启状态</div>
+        </li>
+
+        <li class="cfg-li">
+            <div class="cfg-line">
+                功能允许触发间隔
+                <span class="cfg-hint">#清凉设置图床随机图触发间隔1000</span>
+                <div class="cfg-status">{{@mhgetcd}}</div>
+            </div>
+            <div class="cfg-desc">最短触发间隔 单位ms</div>
+        </li>
+
+        <li class="cfg-li">
+            <div class="cfg-line">
+                撤回间隔
+                <span class="cfg-hint">#清凉设置图床随机图撤回时间60</span>
+                <div class="cfg-status">{{@mhchcd}}</div>
+            </div>
+            <div class="cfg-desc">消息撤回时间 单位s,最长119</div>
+        </li>
+
+        <li class="cfg-li">
+            <div class="cfg-line">
+                最大数量
+                <span class="cfg-hint">#清凉设置图床随机图最大数量10</span>
+                <div class="cfg-status">{{@mhmaxnum}}</div>
+            </div>
+            <div class="cfg-desc">单次获取的最大数量,最大98张</div>
+        </li>
+
+        <li class="cfg-li">
+            <div class="cfg-line">
+                指令正则
+                <span class="cfg-hint">#清凉设置图床随机图正则 + 你想修改成的正则</span>
+                <div class="cfg-status">{{@mhreg}}</div>
+            </div>
+            <div class="cfg-desc">触发指令</div>
+        </li>
+
+    </ul>
+ </div>
+
+ {{/block}}
