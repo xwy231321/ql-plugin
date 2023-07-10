@@ -8,28 +8,24 @@
 [![访问量](https://profile-counter.glitch.me/ql-plugin/count.svg)](https://gitee.com/xwy231321/ql-plugin)
 
 
+## 临时调查问卷
+
+大约占用1分钟时间填写一下关于聊天记录的调查问卷[https://docs.qq.com/form/page/DU3h2VGVLWG1oWXBj](https://docs.qq.com/form/page/DU3h2VGVLWG1oWXBj)
+
+
 ## 安装教程
 
-Yunzai-Bot目录下执行
+Yunzai-Bot目录下执行(二者选其一)
 
 ```
 git clone https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
+pnpm i
 
 ```
 ```
 git clone https://github.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
-
-```
-
-### 请手动安装axios和cheerio，下面是从别的作者那看到的安装依赖的方法，一共3种，本人并不知道依赖应该如何安装，请自行辨别
-```
-pnpm install -P
-```
-```
 pnpm i
-```
-```
-pnpm install --filter=ql-plugin
+
 ```
 
 
@@ -50,7 +46,7 @@ pnpm install --filter=ql-plugin
 | 三元图 | 10 | 开启 | 90% |
 | 404 | 10 | 开启 | 0% |
 | 清秀图 | 10 | 开启 | new |
-| bt搜索(须手动安装axios和cheerio依赖) |  | 开启(群聊可关) | new |
+| bt搜索(须安装依赖axios和cheerio) |  | 开启(群聊可关) | new |
 | 图床随机图 | 10 | 开启 | new |
 
 
@@ -89,7 +85,7 @@ Q群：[597427372](https://jq.qq.com/?_wv=1027&k=rPN5Kmfx)（交流.外群）
 
 <details><summary>赞助与支持</summary>
 
-由于插件性质特殊，内群**分享交流**只提供给开发者/赞助商等有贡献人士，在此也感谢大家一路的支持
+赞助一定金额可进入内群，详情见爱发电界面
 
 #### 支持与赞助
 
