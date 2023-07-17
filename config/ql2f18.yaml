@@ -6,7 +6,7 @@ url:
   - http://shanhe.kim/api/tu/anime.php
   - http://apis.liaomengyun.top/API/pic.php
   - http://shanhe.kim/api/tu/ercy1.php
-  - http://www.yzxdd.icu/api/
+  - http://api.weboss.hk/random/api.php
 isopen: true
 isMaster: false
 getcd: 0
