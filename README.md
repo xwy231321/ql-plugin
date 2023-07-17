@@ -8,11 +8,6 @@
 [![访问量](https://profile-counter.glitch.me/ql-plugin/count.svg)](https://gitee.com/xwy231321/ql-plugin)
 
 
-## 临时调查问卷
-
-大约占用1分钟时间填写一下关于聊天记录的调查问卷[https://docs.qq.com/form/page/DU3h2VGVLWG1oWXBj](https://docs.qq.com/form/page/DU3h2VGVLWG1oWXBj)
-
-
 ## 安装教程
 
 Yunzai-Bot目录下执行(二者选其一)
