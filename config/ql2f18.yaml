@@ -7,6 +7,12 @@ url:
   - http://apis.liaomengyun.top/API/pic.php
   - http://shanhe.kim/api/tu/ercy1.php
   - http://api.weboss.hk/random/api.php
+  - https://t.mwm.moe/ycy
+  - https://t.mwm.moe/ysz
+  - https://t.mwm.moe/moez
+  - https://t.mwm.moe/ysmp
+  - https://t.mwm.moe/moemp
+
 isopen: true
 isMaster: false
 getcd: 0
