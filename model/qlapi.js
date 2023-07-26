@@ -137,7 +137,7 @@ export async function geturls(e, set) {
 
 /** 对url进行截屏(需要url返回图片)v1.0
 * @param url 图片API
-* @return aimage 截屏后图片（宽）
+* @return aimage 截屏后图片
 */
 export async function puppeteer(url) {
   const require = createRequire(import.meta.url)
@@ -154,10 +154,17 @@ export async function puppeteer(url) {
   });
   const page = await browser.newPage();
   await page.goto(url);
-  await page.setViewport( {
-    width: 1920,
-    height: 1080
+  const pageDimensions = await page.evaluate(() => {
+    return {
+      width: document.documentElement.clientWidth,
+      height: document.documentElement.clientHeight,
+    };
   });
+  await page.setViewport({
+    width: pageDimensions.width,
+    height: pageDimensions.height,
+  });
+
 
   let aimage = await segment.image(await page.screenshot( {
     fullPage: true
@@ -215,11 +222,19 @@ export async function makeForwardMsg (e, msg = [], dec = '') {
   }
 
   if (dec) {
-    forwardMsg.data = forwardMsg.data
-    .replace('<?xml version="1.0" encoding="utf-8"?>', '<?xml version="1.0" encoding="utf-8" ?>')
-    .replace(/\n/g, '')
-    .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
-    .replace(/___+/, `<title color="#777777" size="26">${dec}</title>`)
+    if (typeof (forwardMsg.data) === 'object') {
+      let detail = forwardMsg.data?.meta?.detail
+      if (detail) {
+        detail.news = [{ text: dec }]
+      }
+    } else {
+      forwardMsg.data = forwardMsg.data
+        .replace('<?xml version="1.0" encoding="utf-8"?>', '<?xml version="1.0" encoding="utf-8" ?>')
+        .replace(/\n/g, '')
+        .replace(/<title color="#777777" size="26">(.+?)<\/title>/g, '___')
+        .replace(/___+/, `<title color="#777777" size="26">${dec}</title>`)
+    }
+
   }
 
   return forwardMsg
