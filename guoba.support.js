@@ -16,7 +16,22 @@ export function supportGuoba () {
             
         configInfo: {
             schemas: [
-               {
+              {
+                component: 'Divider',
+                label: '出图方式',
+              },{
+                field: 'method.showway',
+                label: '图片发送方式',
+                helpMessage: '修改后直接生效',
+                bottomHelpMessage: '0-浏览器渲染 1-聊天记录 默认1',
+                component: 'InputNumber',
+                required: true,
+                componentProps: {
+                  min: 0,
+                  max: 1,
+                  placeholder: '请输入数字',
+                },
+            },{
                 component: 'Divider',
                 label: '清秀图-清凉淘宝秀',
               },{

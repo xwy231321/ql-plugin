@@ -1,0 +1,56 @@
+{{extend defaultLayout}}
+
+{{block 'css'}}
+
+<link rel="stylesheet" type="text/css" href="{{_res_path}}/photo/photo.css" />
+<style>
+	.container {
+		background: url("{{_res_path}}/admin/imgs/bg/{{bg}}") #000144 top !important;
+		background-size: cover !important;
+		width: auto;
+	}
+</style>
+{{/block}}
+{{block 'main'}}
+
+<div class="info_box">
+	<div class="head-box type{{bgType}}">
+		<div class="label">清凉插件</div>
+		<div class="title">图片展示区域</div>
+	</div>
+</div>
+
+<div class="cfg-box">
+   <div class="cfg-group">{{@name}}</div>
+
+
+<div class="image-container">
+    {{@photo}}
+</div>
+
+<div class="cfg-group">受api限制,可能会出现报错及无图</div>
+<div class="cfg-group">当前暂不支持主动撤回</div>
+</div>
+
+
+  <script>
+    var images = document.querySelectorAll('.image');
+
+   var maxWidth = 0;
+
+
+   images.forEach(function(image) {
+    var width = image.width; 
+    if (width > maxWidth) {
+       maxWidth = width; 
+    }
+    });
+
+
+   images.forEach(function(image) {
+     image.style.width = maxWidth + 'px';
+    });
+
+  </script>
+
+  {{/block}}

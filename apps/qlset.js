@@ -74,6 +74,10 @@ export class ql_set extends plugin {
             reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)设置('+ql2frql.reg+'|'+ql2f18.reg+'|'+ql2r18.reg+'|'+ql3f18.reg+'|'+mh.reg+'|'+p18.reg+'|'+qltao.reg+'|'+btsearch.reg+'|'+yize.reg+')$',
             fnc: 'setting_other',
             permission: "master",
+          },{
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)出图方式(0|1)$',
+            fnc: 'settingway',
+            permission: "master",
           }
         ]
       });
@@ -297,6 +301,7 @@ export class ql_set extends plugin {
       let qltao = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/qltao.yaml', 'utf8'));
       let yize = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/yize.yaml', 'utf8'));
       let btsearch = await YAML.parse(fs.readFileSync(`${Path}/plugins/ql-plugin/config/btsearch.yaml`, 'utf8'));
+      let setway = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/method.yaml', 'utf8'));
 
       let data ={
 
@@ -362,6 +367,8 @@ export class ql_set extends plugin {
         btsearchpagemaxnum: Number(btsearch.page_max_num),
         btsearchgetmaxnum: Number(btsearch.BT_MAX_NUM),
         btsearchreg: btsearch.reg,
+
+        way: Number(setway.showway)
       }
       await render('admin/index', {
         ...data,
@@ -1343,7 +1350,22 @@ export class ql_set extends plugin {
         this.iyize(e)
         return true
       }
-    
+      async settingway(e){
+        let way = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/method.yaml', 'utf8'));
+
+        let areg ='^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)出图方式(0|1)$'
+        let reg = new RegExp(areg).exec(e.msg);
+        if(reg[3] === `0`){
+          way.showway = 0
+
+        }
+        if(reg[3] === `1`){
+          way.showway = 1
+
+        }
+        fs.writeFileSync('./plugins/ql-plugin/config/method.yaml',YAML.stringify(way),'utf8')
+        await this.setting(e)
+   }
     async sethelp(e){
         let msg = []
         msg.push('修改指令为 #(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)+功能名称+配置项+其他')

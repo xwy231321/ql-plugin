@@ -1,0 +1,34 @@
+.cfg-box {
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+  position: relative;
+  background: rgba(35, 38, 57, 0.8);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  background-color: rgba(255, 255, 255, 0.24);
+  border-radius: 26px;
+  box-shadow: 30px 30px 30px -10px rgba(0, 0, 0, 0.15), inset 15px 15px 10px rgba(75, 142, 230, 0.123), -15px -15px 35px rgba(111, 175, 248, 0.144), inset -1px -1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cfg-group {
+  color: #e7f1ff;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .image-container .image {
+    width: 100%;
+  }
+
