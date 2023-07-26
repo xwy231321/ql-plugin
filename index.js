@@ -24,7 +24,6 @@ let ret = []
 
 logger.info('------（-＾〇＾-）-----')
 logger.info('清凉插件初始化～')
-logger.info('V2当前重构进度：0.10%')
 logger.info('-----(/^▽^)/------')
 
 
