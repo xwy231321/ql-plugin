@@ -34,7 +34,7 @@ pnpm i
 
 ![clash](https://gitee.com/xwy231321/ql-plugin-resource/raw/master/clash.png)
 
-也可使用命令来控制出图方式以聊天记录的形式或浏览器渲染
+也可使用命令来控制出图方式以聊天记录的形式或浏览器渲染(注意：该方案下使用浏览器实时截屏渲染,图片由机器本身拉取渲染,负荷较大时不推荐,暂不支持主动撤回)
 
 ![清凉设置](https://gitee.com/xwy231321/ql-plugin-resource/raw/master/help.png)
 
