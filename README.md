@@ -28,6 +28,13 @@ pnpm i
 | :------: | :------: | :----: | :---: |
 | #清凉帮助 | #清凉更新 | #清凉设置 | #清凉版本 |
 
+由于插件的api性质，某些api可能会被你所在地区的运营商拦截，解决办法如下：
+使用代理。（可使用机场订阅配合clash使用）[ **Clash链接** ](https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.20.30)
+打开Clash后安装服务模式，打开TUN模式，打开系统代理。![clash](c5cf2737e85e2aa187d803778e47e346.png)
+
+也可使用命令来控制出图方式以聊天记录的形式或浏览器渲染![清凉设置](2f5bab36cf2d71d1bbca012913e0f5b7.png)
+
+
 
 
 ## 插件功能 [V2.0.5](./CHANGELOG.md)
