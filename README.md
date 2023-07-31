@@ -29,7 +29,7 @@ pnpm i
 | #清凉帮助 | #清凉更新 | #清凉设置 | #清凉版本 |
 
 由于插件的api性质，某些api可能会被你所在地区的运营商拦截，解决办法如下：
-1.使用代理。（可使用机场订阅配合[ **Clash** ]使用(https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.20.30)）
+1.使用代理。（可使用机场订阅配合clash使用）[ **Clash链接** ](https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.20.30)
 
 
 
