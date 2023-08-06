@@ -1405,11 +1405,11 @@ const getStatus = function (rote) {
 
 }
 const getStatuslx = function (rotes) {
-  if (rotes = 0) {
+  if (rotes === 0) {
       return `<div class="cfg-status" >全年龄</div>`;
-  } else if(rotes = 1) {
+  } else if(rotes === 1) {
       return `<div class="cfg-status" >限制级</div>`;
-  }else if(rotes = 2) {
+  }else if(rotes === 2) {
     return `<div class="cfg-status" >混合模式</div>`;
 }
 }
