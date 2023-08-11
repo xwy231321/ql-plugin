@@ -13,12 +13,12 @@
 Yunzai-Bot目录下执行(二者选其一)
 
 ```
-git clone https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
+git clone --depth 1 https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
 pnpm i
 
 ```
 ```
-git clone https://github.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
+git clone --depth 1 https://github.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
 pnpm i
 
 ```
