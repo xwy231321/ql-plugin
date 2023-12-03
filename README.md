@@ -7,6 +7,7 @@
 
 [![访问量](https://profile-counter.glitch.me/ql-plugin/count.svg)](https://gitee.com/xwy231321/ql-plugin)
 
+***有bug请在[Github仓库](https://github.com/xwy231321/ql-plugin)中提交issue，gitee目前我无法评论issue。***
 
 ## 安装教程
 
