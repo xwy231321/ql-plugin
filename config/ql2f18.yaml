@@ -16,6 +16,7 @@ url:
   - https://www.loliapi.com/acg/
   - https://api.paugram.com/wallpaper/
   - https://www.dmoe.cc/random.php
+  - http://shanhe.kim/api/tu/anime.php
 
 isopen: true
 isMaster: false
