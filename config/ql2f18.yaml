@@ -19,6 +19,7 @@ url:
   - http://shanhe.kim/api/tu/anime.php
   - http://shanhe.kim/api/tu/ercy1.php
   - http://api.caonmtx.cn/api/dongman.php
+  - http://ovoa.cc/api/dongman.php?type=jpg
 
 isopen: true
 isMaster: false
