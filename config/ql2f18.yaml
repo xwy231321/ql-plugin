@@ -20,6 +20,7 @@ url:
   - http://shanhe.kim/api/tu/ercy1.php
   - http://api.caonmtx.cn/api/dongman.php
   - http://ovoa.cc/api/dongman.php?type=jpg
+  - http://api.liangx.link/API/AGG.php
 
 isopen: true
 isMaster: false
