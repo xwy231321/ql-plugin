@@ -22,6 +22,7 @@ url:
   - http://shanhe.kim/api/tu/jk.php
   - http://api.caonmtx.cn/api/ksxjj.php
   - http://api.liangx.link/API/sjmn.php
+  - http://api.ltn.org.cn/API/meizi/api.php?type=image
 
 isopen: true
 isMaster: false
