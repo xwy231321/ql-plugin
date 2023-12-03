@@ -14,6 +14,7 @@ url:
   - https://image.anosu.top/pixiv/direct?r18=1&keyword=azurlane
   - https://image.anosu.top/pixiv/direct?r18=1&keyword=bluearchive
   - https://image.anosu.top/pixiv/direct?r18=1&keyword=genshinimpact
+  - http://api.liangx.link/API/sese.php
 isopen: true
 isMaster: false
 getcd: 0
