@@ -15,6 +15,7 @@ url:
   - http://www.98qy.com/sjbz/api.php
   - https://www.loliapi.com/acg/
   - https://api.paugram.com/wallpaper/
+  - https://www.dmoe.cc/random.php
 
 isopen: true
 isMaster: false
