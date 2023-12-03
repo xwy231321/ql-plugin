@@ -21,6 +21,7 @@ url:
   - http://api.caonmtx.cn/api/dongman.php
   - http://ovoa.cc/api/dongman.php?type=jpg
   - http://api.liangx.link/API/AGG.php
+  - http://api.liangx.link/API/ercy.php
 
 isopen: true
 isMaster: false
