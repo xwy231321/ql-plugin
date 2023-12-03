@@ -1,10 +1,8 @@
 url: 
   - https://tuapi.eees.cc/api.php?category=meinv&type=302
   - https://cdn.seovx.com/?mom=302
-  - https://api.f4team.cn/API/meinv/api.php?type=image
   - http://api.btstu.cn/sjbz/
   - https://cdn.seovx.com/ha?mom=302
-  - http://shanhe.kim/api/tu/hs.php
   - https://api.r10086.com/樱道随机图片api接口.php?图片系列=少女写真1
   - https://api.r10086.com/樱道随机图片api接口.php?图片系列=少女写真2
   - https://api.r10086.com/樱道随机图片api接口.php?图片系列=少女写真3
@@ -15,15 +13,13 @@ url:
   - https://api.r10086.com/樱道随机图片api接口.php?图片系列=极品美女图片
   - https://api.r10086.com/樱道随机图片api接口.php?图片系列=萝莉
   - https://api.r10086.com/樱道随机图片api接口.php?图片系列=死库水萝莉
-  - http://shanhe.kim/api/tu/bs.php
   - http://shanhe.kim/api/tu/jk.php
   - https://v2.api-m.com/api/meinvpic?return=302
   - https://v2.api-m.com/api/heisi?return=302
   - https://v2.api-m.com/api/baisi?return=302
   - http://api.starchent.top/API/meizi.php?type=image
   - http://api.starchent.top/API/hs.php
-  - http://www.ggapi.cn/api/girls
-  - http://www.ggapi.cn/api/legs
+
 isopen: true
 isMaster: false
 getcd: 0
