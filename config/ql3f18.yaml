@@ -20,6 +20,7 @@ url:
   - http://api.starchent.top/API/meizi.php?type=image
   - http://api.starchent.top/API/hs.php
   - http://shanhe.kim/api/tu/jk.php
+  - http://api.caonmtx.cn/api/ksxjj.php
 
 isopen: true
 isMaster: false
