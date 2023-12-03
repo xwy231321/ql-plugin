@@ -17,6 +17,7 @@ url:
   - https://api.paugram.com/wallpaper/
   - https://www.dmoe.cc/random.php
   - http://shanhe.kim/api/tu/anime.php
+  - http://shanhe.kim/api/tu/ercy1.php
 
 isopen: true
 isMaster: false
