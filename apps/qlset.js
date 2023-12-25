@@ -17,7 +17,7 @@ let btsearch = await YAML.parse(fs.readFileSync(`${Path}/plugins/ql-plugin/confi
 
 
 
-let setreg = '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)(.*)(开启|关闭|账号|密码|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$'
+let setreg = '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)(.*)(开启|关闭|账号|密码|源添加|源删除|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$'
 export class ql_set extends plugin {
     constructor() {
       super({
@@ -27,39 +27,39 @@ export class ql_set extends plugin {
         priority: 1000,
         rule: [
           {
-            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+ql2frql.reg+')(开启|关闭|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+ql2frql.reg+')(开启|关闭|源添加|源删除|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
             fnc: 'setql2frql',
             permission: "master",
           },{
-            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+ql2f18.reg+')(开启|关闭|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+ql2f18.reg+')(开启|关闭|源添加|源删除|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
             fnc: 'setql2f18',
             permission: "master",
           },{
-            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+ql2r18.reg+')(开启|关闭|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+ql2r18.reg+')(开启|关闭|源添加|源删除|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
             fnc: 'setql2r18',
             permission: "master",
           },{
-            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+ql3f18.reg+')(开启|关闭|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+ql3f18.reg+')(开启|关闭|源添加|源删除|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
             fnc: 'setql3f18',
             permission: "master",
           },{
-            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+mh.reg+')(开启|关闭|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+mh.reg+')(开启|关闭|源添加|源删除|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
             fnc: 'setmh',
             permission: "master",
           },{
-            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+p18.reg+')(开启|关闭|源添加|账号|密码|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+p18.reg+')(开启|关闭|源添加|账号|密码|源删除|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
             fnc: 'setp18',
             permission: "master",
           },{
-            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+qltao.reg+')(开启|关闭|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+qltao.reg+')(开启|关闭|源添加|源删除|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
             fnc: 'setqltao',
             permission: "master",
           },{
-            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+btsearch.reg+')(开启|关闭|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+btsearch.reg+')(开启|关闭|源添加|源删除|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
             fnc: 'setbtsearch',
             permission: "master",
           },{
-            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+yize.reg+')(开启|关闭|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)('+yize.reg+')(开启|关闭|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$',
             fnc: 'setyize',
             permission: "master",
           },{
@@ -389,11 +389,11 @@ export class ql_set extends plugin {
             isopen = false
           }
           ql2frql.isopen = isopen
-        }else if(reg[4] === '仅主人生效开启'||reg[4] === '仅主人生效关闭'){
+        }else if(reg[4] === '仅主人生效'||reg[4] === '全体生效'){
           let isMaster
-          if(reg[4] === '仅主人生效开启'){
+          if(reg[4] === '仅主人生效'){
             isMaster = true
-          }else if(reg[4] === '仅主人生效关闭'){
+          }else if(reg[4] === '全体生效'){
             isMaster = false
           }
           ql2frql.isMaster = isMaster
@@ -514,11 +514,11 @@ export class ql_set extends plugin {
             isopen = false
           }
           ql2f18.isopen = isopen
-        }else if(reg[4] === '仅主人生效开启'||reg[4] === '仅主人生效关闭'){
+        }else if(reg[4] === '仅主人生效'||reg[4] === '全体生效'){
           let isMaster
-          if(reg[4] === '仅主人生效开启'){
+          if(reg[4] === '仅主人生效'){
             isMaster = true
-          }else if(reg[4] === '仅主人生效关闭'){
+          }else if(reg[4] === '全体生效'){
             isMaster = false
           }
           ql2f18.isMaster = isMaster
@@ -630,11 +630,11 @@ export class ql_set extends plugin {
             isopen = false
           }
           ql2r18.isopen = isopen
-        }else if(reg[4] === '仅主人生效开启'||reg[4] === '仅主人生效关闭'){
+        }else if(reg[4] === '仅主人生效'||reg[4] === '全体生效'){
           let isMaster
-          if(reg[4] === '仅主人生效开启'){
+          if(reg[4] === '仅主人生效'){
             isMaster = true
-          }else if(reg[4] === '仅主人生效关闭'){
+          }else if(reg[4] === '全体生效'){
             isMaster = false
           }
           ql2r18.isMaster = isMaster
@@ -745,11 +745,11 @@ export class ql_set extends plugin {
             isopen = false
           }
           ql3f18.isopen = isopen
-        }else if(reg[4] === '仅主人生效开启'||reg[4] === '仅主人生效关闭'){
+        }else if(reg[4] === '仅主人生效'||reg[4] === '全体生效'){
           let isMaster
-          if(reg[4] === '仅主人生效开启'){
+          if(reg[4] === '仅主人生效'){
             isMaster = true
-          }else if(reg[4] === '仅主人生效关闭'){
+          }else if(reg[4] === '全体生效'){
             isMaster = false
           }
           ql3f18.isMaster = isMaster
@@ -860,11 +860,11 @@ export class ql_set extends plugin {
             isopen = false
           }
           mh.isopen = isopen
-        }else if(reg[4] === '仅主人生效开启'||reg[4] === '仅主人生效关闭'){
+        }else if(reg[4] === '仅主人生效'||reg[4] === '全体生效'){
           let isMaster
-          if(reg[4] === '仅主人生效开启'){
+          if(reg[4] === '仅主人生效'){
             isMaster = true
-          }else if(reg[4] === '仅主人生效关闭'){
+          }else if(reg[4] === '全体生效'){
             isMaster = false
           }
           mh.isMaster = isMaster
@@ -981,11 +981,11 @@ export class ql_set extends plugin {
             isopen = false
           }
           p18.isopen = isopen
-        }else if(reg[4] === '仅主人生效开启'||reg[4] === '仅主人生效关闭'){
+        }else if(reg[4] === '仅主人生效'||reg[4] === '全体生效'){
           let isMaster
-          if(reg[4] === '仅主人生效开启'){
+          if(reg[4] === '仅主人生效'){
             isMaster = true
-          }else if(reg[4] === '仅主人生效关闭'){
+          }else if(reg[4] === '全体生效'){
             isMaster = false
           }
           p18.isMaster = isMaster
@@ -1096,11 +1096,11 @@ export class ql_set extends plugin {
             isopen = false
           }
           qltao.isopen = isopen
-        }else if(reg[4] === '仅主人生效开启'||reg[4] === '仅主人生效关闭'){
+        }else if(reg[4] === '仅主人生效'||reg[4] === '全体生效'){
           let isMaster
-          if(reg[4] === '仅主人生效开启'){
+          if(reg[4] === '仅主人生效'){
             isMaster = true
-          }else if(reg[4] === '仅主人生效关闭'){
+          }else if(reg[4] === '全体生效'){
             isMaster = false
           }
           qltao.isMaster = isMaster
@@ -1246,11 +1246,11 @@ export class ql_set extends plugin {
             isopen = false
           }
           yize.isopen = isopen
-        }else if(reg[4] === '仅主人生效开启'||reg[4] === '仅主人生效关闭'){
+        }else if(reg[4] === '仅主人生效'||reg[4] === '全体生效'){
           let isMaster
-          if(reg[4] === '仅主人生效开启'){
+          if(reg[4] === '仅主人生效'){
             isMaster = true
-          }else if(reg[4] === '仅主人生效关闭'){
+          }else if(reg[4] === '全体生效'){
             isMaster = false
           }
           yize.isMaster = isMaster
@@ -1370,7 +1370,7 @@ export class ql_set extends plugin {
         let msg = []
         msg.push('修改指令为 #(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)+功能名称+配置项+其他')
         msg.push('其中#可以省略 每个括号内任选其一即可 功能名称为触发指令，例如清秀图')
-        msg.push('配置项为(开启|关闭|账号|密码|源添加|源删除|仅主人生效开启|仅主人生效关闭|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)')
+        msg.push('配置项为(开启|关闭|账号|密码|源添加|源删除|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)')
         msg.push('若配置项为开启或关闭时无 其他')
         msg.push('仅清凉图含配置项类型混合或全年龄或限制级')
         msg.push('仅铯p图含配置项账号和密码，且账密错误或调用次数耗尽会报错')
