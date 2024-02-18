@@ -5,6 +5,8 @@ import common from'../../../lib/common/common.js'
 import * as qlapi from "./qlapi.js";
 const Path = process.cwd();
 
+//本文件目前并未使用，对其中逻辑并未做验证
+
 /** 图片自动保存程序
 * @param  url api
 * @param  path 保存目录

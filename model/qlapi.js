@@ -9,7 +9,7 @@ function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-/** 权限判断v1.0
+/** 权限判断v1.0（未使用）
 * @param e oicq消息e
 * @param set 已读取到的yaml配置信息
 */
@@ -185,7 +185,7 @@ export async function random(min, max) {
   return result;
 }
 /**
-* 制作转发消息v1.1
+* 制作转发消息v1.1（已无法绕过检测）
 * @param e oicq消息e
 * @param msg 消息数组
 * @param dec 转发描述

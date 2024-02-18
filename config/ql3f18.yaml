@@ -24,6 +24,11 @@ url:
   - http://api.liangx.link/API/sjmn.php
   - http://api.ltn.org.cn/API/meizi/api.php?type=image
   - http://api.lolimi.cn/API/tup/xjj.php
+  - http://se.csnmb.com/API/mein.php
+  - http://api.ovoe.top/API/sjmn.php
+  - https://api.pearktrue.cn/api/beautifulgirl/?type=image
+  - https://jkyapi.top/API/sjmtzs.php
+  - http://dsyai.club/api/youhuotu.php
 
 isopen: true
 isMaster: false

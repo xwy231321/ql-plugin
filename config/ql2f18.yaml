@@ -22,6 +22,9 @@ url:
   - http://ovoa.cc/api/dongman.php?type=jpg
   - http://api.liangx.link/API/AGG.php
   - http://api.liangx.link/API/ercy.php
+  - https://www.lingxi.pw/API/ecy.php?type=img
+  - http://api.ovoe.top/API/ys.php
+  - http://api.xhboke.cn/API/ecy/api.php
 
 isopen: true
 isMaster: false
