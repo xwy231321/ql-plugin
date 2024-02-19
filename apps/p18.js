@@ -50,7 +50,7 @@ export class qlp18 extends plugin {
       }
     }
     if(set.token === `替换成你的账号`||set.password === `替换成你的密码`){
-      await e.reply(`请先联系QQ490593431或聊群996413740兑换账密,账密错误或调用量耗尽会报错(开发者注:本插件仅提供使用方式,不提供密钥等信息)`)
+      await e.reply(`请先联系QQ1044945572兑换账密,账密错误或调用量耗尽会报错(开发者注:本插件仅提供该api的使用方式,不提供密钥等信息)`)
       return true
     }
     await e.reply('我这去翻翻去', false, {
