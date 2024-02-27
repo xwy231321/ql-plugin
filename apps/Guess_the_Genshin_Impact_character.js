@@ -29,8 +29,28 @@ export class guess_name extends plugin {
     }
 
     async guessAvatar(e) {
-        const maxtime = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/guess.yaml', 'utf8'));
-        const GAME_TIME_OUT = maxtime.maxtime
+        const set = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/guess.yaml', 'utf8'));
+        const GAME_TIME_OUT = set.maxtime
+        let isopen = set.isopen
+        let cdtime = set.getcd
+        if (!isopen) {
+            return false
+            } else {
+        isopen = false;
+            setTimeout(async () => {
+        isopen = true;
+        }, cdtime);
+        }
+        if (e.isGroup) {
+            if (set.whitegroup === null) {
+            if (set.blackgroup.includes(e.group_id)) return e.reply("当前群未开启哦~", true);
+            } else if (set.whitegroup.length === 0) {
+            if (set.blackgroup.includes(e.group_id)) return e.reply("当前群未开启哦~", true);
+            } else {
+            let openGroup = set.whitegroup
+                if (!openGroup.includes(e.group_id)) return e.reply("当前群未开启哦~", true);
+            }
+        }
         let guessConfig = getGuessConfig(e)
         if (guessConfig.playing) {
             e.reply('猜角色游戏正在进行哦')
