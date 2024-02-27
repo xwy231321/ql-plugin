@@ -14,10 +14,10 @@ let p18 = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/p18.yaml'
 let qltao = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/qltao.yaml', 'utf8'));
 let yize = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/yize.yaml', 'utf8'));
 let btsearch = await YAML.parse(fs.readFileSync(`${Path}/plugins/ql-plugin/config/btsearch.yaml`, 'utf8'));
+let guess = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/guess.yaml', 'utf8'));
 
 
-
-let setreg = '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)(.*)(开启|关闭|账号|密码|源添加|源删除|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$'
+let setreg = '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)(.*)(开启|关闭|等待间隔|账号|密码|源添加|源删除|仅主人生效|全体生效|触发间隔|撤回时间|最大数量|指令|正则|黑名单群添加|黑名单群删除|白名单群添加|白名单群删除|类型混合|类型全年龄|类型限制级|最大页数)(.*)$'
 export class ql_set extends plugin {
     constructor() {
       super({
@@ -71,12 +71,16 @@ export class ql_set extends plugin {
             fnc: 'setting',
             permission: "master",
           },{
-            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)设置('+ql2frql.reg+'|'+ql2f18.reg+'|'+ql2r18.reg+'|'+ql3f18.reg+'|'+mh.reg+'|'+p18.reg+'|'+qltao.reg+'|'+btsearch.reg+'|'+yize.reg+')$',
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)设置('+ql2frql.reg+'|'+ql2f18.reg+'|'+ql2r18.reg+'|'+ql3f18.reg+'|'+mh.reg+'|'+p18.reg+'|'+qltao.reg+'|'+btsearch.reg+'|'+yize.reg+'|猜角色)$',
             fnc: 'setting_other',
             permission: "master",
           },{
             reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)出图方式(0|1)$',
             fnc: 'settingway',
+            permission: "master",
+          },{
+            reg: '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)猜角色(等待间隔|开启|关闭|触发间隔)(.*)$',
+            fnc: 'setguess',
             permission: "master",
           }
         ]
@@ -245,6 +249,7 @@ export class ql_set extends plugin {
         })
 
       }
+
       async iyize(e){
         let yize = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/yize.yaml', 'utf8'));
         let data ={
@@ -264,6 +269,27 @@ export class ql_set extends plugin {
           e,
           scale: 1.4
         })}
+
+
+        async jguess(e){
+          let guess = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/guess.yaml', 'utf8'));
+          let data ={
+  
+            guessisopen: getStatus(guess.isopen),
+            guessgetcd: Number(guess.getcd),
+            guessmaxtime: Number(guess.maxtime),
+    
+          }
+          await render('admin/guess', {
+            ...data,
+            bg: await rodom()
+          }, {
+            e,
+            scale: 1.4
+          })}
+
+
+
     async setting_other(e) {
       let set_other_reg = '^#?(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)设置(.*)$'
      let reg = new RegExp(set_other_reg).exec(e.msg);
@@ -285,8 +311,10 @@ export class ql_set extends plugin {
         this.hbtsearch(e)
       }else if(reg[2] === yize.reg){
         this.iyize(e)
-      }else{
+      }else if(reg[2] === p18.reg){
         this.fp18(e)
+      }else if(reg[2] === '猜角色'){
+        this.jguess(e)
       }
       
     }
@@ -368,7 +396,11 @@ export class ql_set extends plugin {
         btsearchgetmaxnum: Number(btsearch.BT_MAX_NUM),
         btsearchreg: btsearch.reg,
 
-        way: Number(setway.showway)
+        way: Number(setway.showway),
+
+        guessisopen: getStatus(guess.isopen),
+        guessgetcd: Number(guess.getcd),
+        guessmaxtime: Number(guess.maxtime),
       }
       await render('admin/index', {
         ...data,
@@ -1366,6 +1398,89 @@ export class ql_set extends plugin {
         fs.writeFileSync('./plugins/ql-plugin/config/method.yaml',YAML.stringify(way),'utf8')
         await this.setting(e)
    }
+
+   async setguess(e){
+    let guess = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/guess.yaml', 'utf8'));
+    let reg = new RegExp(setreg).exec(e.msg);
+    if(reg[4] === '开启'||reg[4] === '关闭'){
+      let isopen
+      if(reg[4] === '开启'){
+        isopen = true
+      }else if(reg[4] === '关闭'){
+        isopen = false
+      }
+      guess.isopen = isopen
+    }else if(reg[4] === '触发间隔'){
+      if(Number.isInteger(Number(reg[5]))){
+      let getcd = Number(reg[5])
+      guess.getcd = getcd
+      }else{
+        e.reply('请以数字结尾')
+        return true
+      }
+    }else if(reg[4] === '等待间隔'){
+      if(Number.isInteger(Number(reg[5]))){
+      let maxtime = Number(reg[5])
+      guess.maxtime = maxtime
+      }else{
+        e.reply('请以数字结尾')
+        return true
+      }
+    }else if(reg[4] === '黑名单群删除'||reg[4] === '黑名单群添加'){
+      let blackgroup = guess.blackgroup
+      if(reg[4] === '黑名单群删除'){
+        if(Number.isInteger(Number(reg[5]))){
+          let index = blackgroup.indexOf(Number(reg[5]))
+          if(index > -1){
+            blackgroup.splice(index, 1)
+            guess.blackgroup = blackgroup
+          }else{
+            e.reply('黑名单群没有这个')
+            return true
+          }
+        }else{
+          e.reply('请以数字群号结尾')
+          return true
+        }
+      }else if(reg[4] === '黑名单群添加'){
+        if(Number.isInteger(Number(reg[5]))){
+          blackgroup.push(Number(reg[5]))
+          guess.blackgroup = blackgroup
+        }else{
+          e.reply('请以数字群号结尾')
+          return true
+        }
+      }
+    }else if(reg[4] === '白名单群删除'||reg[4] === '白名单群添加'){
+      let whitegroup = guess.whitegroup
+      if(reg[4] === '白名单群删除'){
+        if(Number.isInteger(Number(reg[5]))){
+          let index = whitegroup.indexOf(Number(reg[5]))
+          if(index > -1){
+            whitegroup.splice(index, 1)
+            guess.whitegroup = whitegroup
+          }else{
+            e.reply('白名单群没有这个')
+            return true
+          }
+        }else{
+          e.reply('请以数字群号结尾')
+          return true
+        }
+      }else if(reg[4] === '白名单群添加'){
+        if(Number.isInteger(Number(reg[5]))){
+          whitegroup.push(Number(reg[5]))
+          guess.whitegroup = whitegroup
+        }else{
+          e.reply('请以数字群号结尾')
+          return true
+        }
+      }
+    }
+    fs.writeFileSync('./plugins/ql-plugin/config/guess.yaml',YAML.stringify(guess),'utf8')
+    this.jguess(e)
+    return true
+  }
     async sethelp(e){
         let msg = []
         msg.push('修改指令为 #(Ql|qL|QL|ql|清凉|ql插件|Ql插件|qL插件|QL插件|清凉插件)(设置|更改)+功能名称+配置项+其他')
