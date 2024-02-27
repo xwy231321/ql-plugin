@@ -5,6 +5,7 @@ import { segment } from 'oicq'
 import lodash from 'lodash'
 import sizeOf from 'image-size'
 import template from "art-template"
+import common from'../../../lib/common/common.js'
 import puppeteer from "puppeteer"
 
 export class guess_name extends plugin {
@@ -118,6 +119,7 @@ export class guess_name extends plugin {
             if (roleId === id) {
                 await replayAnswer(e, ['恭喜你答对了！'], guessConfig, true)
                 if (normalMode && lodash.random(0, 100) <= 8) {
+                     await common.sleep(500);
                     e.reply('如果感觉太简单了的话，可以对我说“#猜角色困难模式”或者“#猜角色地狱模式”哦！')
                 }
                 return true
