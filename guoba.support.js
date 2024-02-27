@@ -32,6 +32,50 @@ export function supportGuoba () {
                   placeholder: '请输入数字',
                 },
             },{
+              field: 'guess.isopen',
+              label: '功能开关',
+              bottomHelpMessage: '是否开启',
+              component: 'Switch'
+          },{
+            field: 'guess.getcd',
+            label: '触发CD',
+            helpMessage: '重启后生效',
+            bottomHelpMessage: '为0则无间隔，单位毫秒，连续两次触发最短间隔（非全局）',
+            component: 'InputNumber',
+            required: true,
+            componentProps: {
+              min: 0,
+              max: 99999999,
+              placeholder: '请输入数字',
+            },
+        },{
+          field: 'guess.whitegroup',
+          label: '白名单群',
+          bottomHelpMessage: '白名单群，可以设置多个，当存在白名单群时黑名单群配置将失效',
+          component: 'GTags',
+          componentProps: {
+            placeholder: '请输入白名单群',
+            allowAdd: true,
+            allowDel: true,
+            showPrompt: true,
+            promptProps: addGroupPromptProps,
+            valueFormatter: ((value) => Number.parseInt(value)).toString(),
+          },
+        },
+        {
+          field: 'guess.blackgroup',
+          label: '黑名单群',
+          bottomHelpMessage: '黑名单群，可以设置多个，当存在白名单群时，该配置失效',
+          component: 'GTags',
+          componentProps: {
+            placeholder: '请输入黑名单群',
+            allowAdd: true,
+            allowDel: true,
+            showPrompt: true,
+            promptProps: addGroupPromptProps,
+            valueFormatter: ((value) => Number.parseInt(value)).toString(),
+          },
+        },{
                 component: 'Divider',
                 label: '出图方式',
               },{
