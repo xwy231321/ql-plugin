@@ -54,6 +54,10 @@ export const helpList = [
       icon: 83,
       title: "#bt",
       desc: "bt搜索,后加关键词,需要手动安装axios和cheerio依赖"
+    },{
+      icon: 78,
+      title: "#猜角色",
+      desc: "原神猜角色，猜测时直接回答角色名称即可"
     }
   ]
 },{
