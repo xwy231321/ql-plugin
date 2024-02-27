@@ -1,1 +1,8 @@
 maxtime: 30
+isopen: true
+getcd: 0
+blackgroup:
+  - 123456
+  - 456789
+  - 123456789
+whitegroup: null
