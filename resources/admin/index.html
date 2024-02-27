@@ -584,6 +584,39 @@
     </ul>
  </div>
 
+ <div class="cfg-box">
+    <div class="cfg-group">猜角色</div>
+    <ul class="cfg-ul">
 
+        <li class="cfg-li">
+            <div class="cfg-line">
+                开启状态
+                <span class="cfg-hint">#清凉设置猜角色 + 开启/关闭</span>
+                {{@guessisopen}}
+            </div>
+            <div class="cfg-desc">开启状态</div>
+        </li>
+
+
+        <li class="cfg-li">
+            <div class="cfg-line">
+                功能允许触发间隔
+                <span class="cfg-hint">#清凉设置猜角色触发间隔1000</span>
+                <div class="cfg-status">{{@guessgetcd}}</div>
+            </div>
+            <div class="cfg-desc">最短触发间隔 单位ms</div>
+        </li>
+
+        <li class="cfg-li">
+            <div class="cfg-line">
+                等待间隔
+                <span class="cfg-hint">#清凉设置绎泽随机图等待间隔30</span>
+                <div class="cfg-status">{{@guessmaxtime}}</div>
+            </div>
+            <div class="cfg-desc">单局等待时间 单位s</div>
+        </li>
+
+    </ul>
+ </div>
 
  {{/block}}
