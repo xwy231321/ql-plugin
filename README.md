@@ -48,7 +48,7 @@ pnpm i
 
 
 
-## 插件功能 [V2.0.6](./CHANGELOG.md)
+## 插件功能 [V2.0.7](./CHANGELOG.md)
 
 
 | 年.龄.限制 | 无 | | |
