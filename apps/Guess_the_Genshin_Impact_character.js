@@ -22,7 +22,8 @@ export class guess_name extends plugin {
                 },
                 {
                     reg: '',
-                    fnc: 'guessAvatarCheck'
+                    fnc: 'guessAvatarCheck',
+                    log: false
                 }
             ]
         })
@@ -84,10 +85,9 @@ export class guess_name extends plugin {
         let roleId = roleIdToName(roleName)
         guessConfig.playing = true
         guessConfig.roleId = roleId
-        console.group('猜角色')
-        console.log('ID:', roleId)
-        console.log('角色:', roleName)
-        console.groupEnd()
+        logger.mark('猜角色')
+        logger.info('ID:', roleId)
+        logger.info('角色:', roleName)
         let imgSrc = path.join(imgPath, fileName)
         // 减小生成过多空白的可能性
         let minTop = 0, limitTop = 0, minLeft = 0, limitLeft = 0
