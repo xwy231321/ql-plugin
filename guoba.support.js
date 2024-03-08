@@ -202,7 +202,7 @@ export function supportGuoba () {
             },{
               field: 'p18.token',
               label: '您的账号',
-              bottomHelpMessage: '联系QQ490593431或聊群996413740兑换账密，1块5000+送2000，共7000调用量',
+              bottomHelpMessage: '联系QQ1044945572兑换账密，本插件只提供使用途径，不提供账密',
               component: 'Input',
               required: true,
               componentProps: {
@@ -211,7 +211,7 @@ export function supportGuoba () {
               },{
                 field: 'p18.password',
                 label: '您的密码',
-                bottomHelpMessage: '联系QQ490593431或聊群996413740兑换账密，1块5000+送2000，共7000调用量',
+                bottomHelpMessage: '联系QQ1044945572兑换账密，本插件只提供使用途径，不提供账密',
                 component: 'Input',
                 required: true,
                 componentProps: {
