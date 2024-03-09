@@ -4,7 +4,6 @@ url:
   - https://api.yimian.xyz/img?type=moe&size=1920x1080
   - https://api.yimian.xyz/img?type=moe
   - http://shanhe.kim/api/tu/anime.php
-  - http://apis.liaomengyun.top/API/pic.php
   - http://shanhe.kim/api/tu/ercy1.php
   - http://api.weboss.hk/random/api.php
   - https://t.mwm.moe/ycy
@@ -20,10 +19,7 @@ url:
   - http://shanhe.kim/api/tu/ercy1.php
   - http://api.caonmtx.cn/api/dongman.php
   - http://ovoa.cc/api/dongman.php?type=jpg
-  - http://api.liangx.link/API/AGG.php
-  - http://api.liangx.link/API/ercy.php
   - https://www.lingxi.pw/API/ecy.php?type=img
-  - http://api.ovoe.top/API/ys.php
   - http://api.xhboke.cn/API/ecy/api.php
 
 isopen: true
