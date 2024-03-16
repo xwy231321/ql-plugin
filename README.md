@@ -3,7 +3,7 @@
 
 <a href="https://www.murphysec.com/console/report/1671125207802994688/1671125207849132032" alt="Security Status"><img src="https://www.murphysec.com/platform3/v31/badge/1671125207849132032.svg" /></a>
 
-[![Gitee](https://img.shields.io/badge/Gitee-清凉插件-black?style=flat-square&logo=gitee)](https://gitee.com/xwy231321/ql-plugin) [![云崽bot](https://img.shields.io/badge/云崽-v3.0.0-black?style=flat-square&logo=dependabot)](https://gitee.com/Le-niao/Yunzai-Bot) [![Group](https://img.shields.io/badge/群号-597427372-red?style=flat-square&logo=GroupMe&logoColor=white)](https://jq.qq.com/?_wv=1027&k=rPN5Kmfx)<a href='https://gitee.com/xwy231321/ql-plugin/stargazers'><img src='https://gitee.com/xwy231321/ql-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
+[![Gitee](https://img.shields.io/badge/Gitee-清凉插件-black?style=flat-square&logo=gitee)](https://gitee.com/xwy231321/ql-plugin) [![云崽bot](https://img.shields.io/badge/云崽-v3.0.0-black?style=flat-square&logo=dependabot)](https://gitee.com/Le-niao/Yunzai-Bot) [![Group](https://img.shields.io/badge/鹅群-597427372-red?style=flat-square&logo=GroupMe&logoColor=white)](https://jq.qq.com/?_wv=1027&k=rPN5Kmfx)<a href='https://gitee.com/xwy231321/ql-plugin/stargazers'><img src='https://gitee.com/xwy231321/ql-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
 
 [![访问量](https://profile-counter.glitch.me/ql-plugin/count.svg)](https://gitee.com/xwy231321/ql-plugin)
 
@@ -85,15 +85,13 @@ pnpm i
 
 注意！如果您发起pr来增加图源链接，您在进行pr之前须经本地测试以保证这是一个可供使用的api。若确认某api失效，发起pr后作者也会审查后才将其合并！
 
-QQ：2060403379（准大一小白）
+QQ：2060403379（大一小白）
 
 爱发电：[点我前往爱发电页面](https://afdian.net/a/xwy231321/plan)
 
 如果可以的话，给本项目个star，来支持本项目，您的支持就是给我的最大的鼓励，谢谢。
 
 <details><summary>赞助与支持</summary>
-
-赞助一定金额可进入内群，详情见爱发电界面
 
 #### 支持与赞助
 
@@ -112,8 +110,6 @@ QQ：2060403379（准大一小白）
 
 
 #### 推荐修改配置使用：
-
-蓝奏云：[☞Windows](https://xwy2.lanzouf.com/ipg2u0im7ybi)/[☞Android](https://xwy2.lanzouf.com/iABUt0im7y8f)密码；1234，蓝奏云无法打开自行百度解决办法
 
 gitee仓库：[☞Windows](https://gitee.com/xwy231321/cv-plugins-in-resources/blob/master/PC%E7%AB%AF%E4%BA%91%E5%B4%BDjs%E6%8F%92%E4%BB%B6%E7%BC%96%E8%BE%91%E5%99%A8.rar)/[☞Android](https://gitee.com/xwy231321/cv-plugins-in-resources/blob/master/NMM_1.12.6.apk)
 
@@ -135,14 +131,7 @@ Yunzai-Bot插件库：[☞Github](https://github.com/yhArcadia/Yunzai-Bot-plugin
 
 Yunzai-Bot（V3）：[☞Github](https://github.com/Le-niao/Yunzai-Bot)/[☞Gitee](https://gitee.com/Le-niao/Yunzai-Bot) 
 
-Yunzai-Bot（V2）：[☞Github](https://github.com/yoimiya-kokomi/Yunzai-Bot)/[☞Gitee](https://gitee.com/yoimiya-kokomi/Yunzai-Bot) 
-
 ql-plugin：[☞Gitee](https://gitee.com/xwy231321/ql-plugin)/[☞Github](https://github.com/xwy231321/ql-plugin)
-
-
-友情网站
-
-小冰api：[https://xiaobapi.top/api/](https://xiaobapi.top/api/)
 
 
 </div>
