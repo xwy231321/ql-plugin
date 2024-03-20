@@ -49,16 +49,34 @@ export class qlp18 extends plugin {
         if (!openGroup.includes(e.group_id)) return e.reply("当前群未开启哦~", true);
       }
     }
+     let urlcd = 200
+    let url
     if(set.token === `替换成你的账号`||set.password === `替换成你的密码`){
-      await e.reply(`请先联系QQ1044945572兑换账密,账密错误或调用量耗尽会报错(开发者注:本插件仅提供该api的使用方式,不提供密钥等信息)`)
-      return true
+      url = 'https://se.csnmb.com/API/P站/tu.php'
+      await e.reply('我这去翻翻去', false, {
+        recallMsg: 7
+      })
+    let way = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/method.yaml', 'utf8'));
+    if(way.showway === 0){
+    let msg = await qlhtml.geturl(url, urlcd, set, e)
+    let dec = firstset.reg+'来啦'
+    await qlhtml.makehtml(e, msg, dec)
+    }else if(way.showway === 1){
+    let msg = await qlapi.geturl(url, urlcd, set, e)
+    let dec = firstset.reg+'来啦'
+    let Msg = await qlapi.makeForwardMsg(e, msg, dec)
+    await e.reply(Msg, false, {
+      recallMsg: set.chcd
+    })
+    }
+    return true
+
+    }else{
+      url = set.url+`?token=`+set.token+`&password=`+set.password
     }
     await e.reply('我这去翻翻去', false, {
       recallMsg: 7
     })
-    let url = set.url+`?token=`+set.token+`&password=`+set.password
-    let urlcd = 200
-
     let way = await YAML.parse(fs.readFileSync('./plugins/ql-plugin/config/method.yaml', 'utf8'));
     if(way.showway === 0){
     let msg = await qlhtml.geturljson(url, urlcd, set, e)
