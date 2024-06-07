@@ -74,8 +74,6 @@ export class guess_name extends plugin {
             size = lodash.random(30, 40)
             helpText = '%s'
         }
-        helpText = helpText.replace('%s', `即将发送一张『随机角色』的『随机一角』，${GAME_TIME_OUT}秒之后揭晓答案！`)
-        e.reply(helpText)
         let fileNames = []
         let ffn = (n) => !/(未知)/.test(n)
         let imgPath = lodash.random(0, 100) <= 30 ? logoPath : gachaPath
@@ -88,6 +86,8 @@ export class guess_name extends plugin {
         logger.mark('猜角色')
         logger.info('ID:', roleId)
         logger.info('角色:', roleName)
+        helpText = helpText.replace('%s', `即将发送一张『随机角色』的『随机一角』，${GAME_TIME_OUT}秒之后揭晓答案！`+'这个角色的官方名字长度是：'+String(roleName).length)
+        e.reply(helpText)
         let imgSrc = path.join(imgPath, fileName)
         // 减小生成过多空白的可能性
         let minTop = 0, limitTop = 0, minLeft = 0, limitLeft = 0
