@@ -360,7 +360,7 @@ async function doRender(app, type, data, imgType, renderCfg) {
         const page = await browser.newPage()
         await page.goto("file://" + savePath)
         await page.waitForSelector("#container")
-        await page.waitForTimeout(100)
+        //await page.waitForTimeout(100)
         let body = await page.$("#container")
         let randData = {
             type: imgType,
