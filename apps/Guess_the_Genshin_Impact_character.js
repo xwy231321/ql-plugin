@@ -68,10 +68,10 @@ export class guess_name extends plugin {
             size = lodash.random(30, 40)
             helpText = '%s\n在『困难模式』下，发送的图片将会变成黑白色。'
         } else if (hellMode) {
-            size = lodash.random(30, 40)
+            size = lodash.random(40, 45)
             helpText = '%s\n在『地狱模式』下，发送的图片将会变成反色。'
         } else {
-            size = lodash.random(30, 40)
+            size = lodash.random(45, 50)
             helpText = '%s'
         }
         let fileNames = []
@@ -535,7 +535,7 @@ genshin.roleId = {
     10000060: ["夜兰", "Yelan", "yelan", "夜阑", "叶澜", "腋兰", "夜天后"],
     10000063: ["申鹤", "Shenhe", "shenhe", "神鹤", "小姨", "小姨子", "审鹤"],
     10000064: ["云堇", "Yun Jin", "yunjin", "yun jin", "云瑾", "云先生", "云锦", "神女劈观", "土女"],
-    10000065: ["久岐忍", "Kuki Shinobu", "Kuki", "kuki", "Shinobu", "shinobu", "97忍", "小忍", "久歧忍", "97", "茄忍", "茄子", "紫茄子", "阿忍", "忍姐"],
+    10000065: ["久岐忍", "Kuki Shinobu", "Kuki", "kuki", "Shinobu", "shinobu", "97忍", "小忍", "久歧忍", "97", "茄忍", "茄子", "紫茄子", "阿忍", "忍姐", "久崎忍"],
     10000066: ["神里绫人", "Kamisato Ayato", "Ayato", "ayato", "绫人", "神里凌人", "凌人", "0人", "神人", "零人", "大舅哥"],
 
     //3.0
