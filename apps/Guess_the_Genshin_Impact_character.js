@@ -65,13 +65,13 @@ export class guess_name extends plugin {
         // 图片大小
         let size, helpText
         if (hardMode) {
-            size = lodash.random(30, 40)
+            size = lodash.random(35, 42)
             helpText = '%s\n在『困难模式』下，发送的图片将会变成黑白色。'
         } else if (hellMode) {
-            size = lodash.random(40, 45)
+            size = lodash.random(35, 40)
             helpText = '%s\n在『地狱模式』下，发送的图片将会变成反色。'
         } else {
-            size = lodash.random(45, 50)
+            size = lodash.random(30, 40)
             helpText = '%s'
         }
         let fileNames = []
