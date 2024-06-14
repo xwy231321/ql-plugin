@@ -3,7 +3,7 @@
 
 <a href="https://www.murphysec.com/console/report/1671125207802994688/1671125207849132032" alt="Security Status"><img src="https://www.murphysec.com/platform3/v31/badge/1671125207849132032.svg" /></a>
 
-[![Gitee](https://img.shields.io/badge/Gitee-清凉插件-black?style=flat-square&logo=gitee)](https://gitee.com/xwy231321/ql-plugin) [![云崽bot](https://img.shields.io/badge/云崽-v3-black?style=flat-square&logo=dependabot)](https://gitee.com/Le-niao/Yunzai-Bot) [![Group](https://img.shields.io/badge/鹅群-597427372-red?style=flat-square&logo=GroupMe&logoColor=white)](https://jq.qq.com/?_wv=1027&k=rPN5Kmfx)<a href='https://gitee.com/xwy231321/ql-plugin/stargazers'><img src='https://gitee.com/xwy231321/ql-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
+[![Gitee](https://img.shields.io/badge/Gitee-清凉插件-black?style=flat-square&logo=gitee)](https://gitee.com/xwy231321/ql-plugin) [![云崽bot](https://img.shields.io/badge/云崽-v3&v4-black?style=flat-square&logo=dependabot)](https://gitee.com/Le-niao/Yunzai-Bot) [![Group](https://img.shields.io/badge/鹅群-597427372-red?style=flat-square&logo=GroupMe&logoColor=white)](https://jq.qq.com/?_wv=1027&k=rPN5Kmfx)<a href='https://gitee.com/xwy231321/ql-plugin/stargazers'><img src='https://gitee.com/xwy231321/ql-plugin/badge/star.svg?theme=dark' alt='star'></img></a>
 
 [![访问量](https://profile-counter.glitch.me/ql-plugin/count.svg)](https://gitee.com/xwy231321/ql-plugin)
 
@@ -12,6 +12,8 @@
 ## 安装教程
 
 Yunzai-Bot目录下执行(二者选其一)
+
+**V3云崽**
 
 ```
 git clone --depth 1 https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
@@ -24,6 +26,20 @@ pnpm i
 
 ```
 
+<details><summary>V4云崽（测试）</summary>
+
+```
+git clone --depth 1 -b dev https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
+pnpm i
+
+```
+```
+git clone --depth 1 -b dev https://github.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
+pnpm i
+
+```
+
+</details>
 
 | 食用方法 | 更新方法 | 查看设置 | 查看版本 |
 | :------: | :------: | :----: | :---: |
