@@ -26,20 +26,6 @@ pnpm i
 
 ```
 
-<details><summary>V4云崽（测试）</summary>
-
-```
-git clone --depth 1 -b dev https://gitee.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
-pnpm i
-
-```
-```
-git clone --depth 1 -b dev https://github.com/xwy231321/ql-plugin.git ./plugins/ql-plugin/
-pnpm i
-
-```
-
-</details>
 
 | 食用方法 | 更新方法 | 查看设置 | 查看版本 |
 | :------: | :------: | :----: | :---: |
